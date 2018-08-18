@@ -1,36 +1,34 @@
 .copyright {
-    width: 1200px;
-    height: 300px;
+    width: 1900px;
+    height: 341px;
     background-color: #003b4d;
     margin-top: 10px;
     margin: 0 auto;
     clear: both;
     
 }
-
 .copyright_content {
-    width: 1200px;
+    width: 1900px;
     margin: 0 auto;
-    padding-top: 20px;
+    padding-top: 30px;
+    padding-left: 340px;
     position: absolute;
 }
 
 .copyright_content li {
     list-style-type: none;
     float: left;
-    width: 250px;
+    width: 300px;
     text-align: left;
     line-height: 30px;
     font-family: "微软雅黑";
 }
 
 .copyright_content a {
-    margin-right:40px;
+    margin-right:80px;
     text-decoration: none;
     color: #fff;  
-    font-size: 18px;
-    /* padding-left: 40px; */
-   
+    font-size: 18px;  
 }
 .copyright_content .copyright_link{
     position: relative;
@@ -54,11 +52,11 @@
 }
 .Images{
     position: relative;
-    top:220px;
-    left: 800px;
+    top:240px;
+    left: 1250px;
 }
 .Oracle{
     position: relative;
-    top:150px;
-    left:76px;
+    top:170px;
+    left:420px;
 }
