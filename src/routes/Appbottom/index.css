@@ -32,7 +32,6 @@
 }
 .copyright_content .copyright_link{
     position: relative;
-    left: 39px;
     font-weight: bold;
     padding-bottom: 30px;
 }
@@ -46,17 +45,18 @@
 }
 .line{
     position: relative;
-    width:1050px;
+    width:1500px;
     text-align: center;
     top:200px;
+    left: 200px;
 }
 .Images{
     position: relative;
     top:240px;
-    left: 1250px;
+    left: 1300px;
 }
 .Oracle{
     position: relative;
     top:170px;
-    left:420px;
+    left:350px;
 }
