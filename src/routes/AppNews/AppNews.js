@@ -12,7 +12,7 @@ class AppNews extends Component{
                         <div className={styles.news4440}>
                             <img src={require("../../images/test.jpg")} alt='test1' style={{width:'384px',height:'225px'}}/>
                             <div className={styles.news44410}>
-                              hhh
+                              <p className={styles.news}>To be or not to be,that is a question.</p>
                             </div>
                             <div className={styles.news4441}>
                               <p>CHYNB</p>
@@ -21,7 +21,7 @@ class AppNews extends Component{
                         <div className={styles.news4440}>
                              <img src={require("../../images/test.jpg")} alt='test2' style={{width:'384px',height:'225px'}}/>
                              <div className={styles.news44411}>
-                              hhh
+                             <p className={styles.news}>To be or not to be,that is a question.</p>
                             </div>
                             <div className={styles.news4441}>
                               <p>CHYNB</p>
@@ -30,19 +30,19 @@ class AppNews extends Component{
                         <div className={styles.news4440}>
                              <img src={require("../../images/test.jpg")} alt='test3' style={{width:'384px',height:'225px'}}/>
                              <div className={styles.news44412}>
-                              hhh
+                             <p className={styles.news}>To be or not to be,that is a question.</p>
                             </div>
                             <div className={styles.news4441}>
-                              <p>CHYNB</p>
+                            <p>CHYNB</p>
                             </div>
                         </div>
                         <div className={styles.news4440}>
                              <img src={require("../../images/test.jpg")} alt='test4' style={{width:'384px',height:'225px'}}/>
-                             <div className={styles.news44412}>
-                              hhh
+                             <div className={styles.news44413}>
+                             <p className={styles.news}>To be or not to be,that is a question.</p>
                             </div>
                             <div className={styles.news4441}>
-                              <p>CHYNB</p>
+                            <p>CHYNB</p>
                             </div>
                         </div>
                  </div>

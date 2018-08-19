@@ -31,26 +31,49 @@
 .news44410{
     width: 100%;
     height: 100px;
-    background-color: red;
+    background-color: #01758f;
+    position: relative;
 }
 .news44411{
     width: 100%;
     height: 100px;
-    background-color: red;
+    background-color: #3b9140;
+    position: relative;
 }
 
 .news44412{
     width: 100%;
     height: 100px;
-    background-color: red;
+    background-color: #013c4e;
+    position: relative;
 }
 .news44413{
     width: 100%;
     height: 100px;
-    background-color: red;
+    background-color: #942746;
+    position: relative;
 }
 .news4441{
     width: 100%;
     height: 140px;
     background-color: #fff;
+    position: relative;
+}
+.news{
+    position: absolute;
+    display: block;
+    width: 50%;
+    font-size: 20px;
+    color:#fff;
+    left: 10px;
+    top: 10px;
+ 
+}
+.news4441 p{
+    display: block;
+    text-align: center;
+    position: absolute;
+    top: 30px;
+    left:20px;
+
 }

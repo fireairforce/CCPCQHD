@@ -10,7 +10,7 @@ class AppRules extends Component{
                     </div>
                     <div className={styles.rules444}> 
                     <p className={styles.rules555}><a href=" ">了解更多</a></p>
-                    <img src={require("../../images/arraw.png")} alt="arrow" style={{width:'25px',height:'25px',position:'absolute',marginTop:'-43px',marginLeft:'200px'}} className={styles.img0}/>
+                    <img src={require("../../images/arraw.png")} alt="arrow" style={{width:'25px',height:'25px',position:'absolute',marginTop:'-75px',marginLeft:'200px'}}/>
                     </div>
              </div>    
        )
