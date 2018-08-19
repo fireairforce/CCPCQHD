@@ -77,3 +77,13 @@
     left:20px;
 
 }
+.news4440 img:hover{
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s; 
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    transition: scale(1.05);
+    box-shadow: -10px 10px 15px #CCC;
+    cursor: pointer;
+}

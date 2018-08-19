@@ -33,7 +33,7 @@
 .copyright_content .copyright_link{
     position: relative;
     font-weight: bold;
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
 }
 .copyright_content li ul li a {
     font-size: 14px;

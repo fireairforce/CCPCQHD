@@ -7,6 +7,7 @@ import AppHeader from './AppHeader/AppHeader'
 import AppSLider from './Slider/index'
 import AppMessage from './AppMessage/AppMessage'
 import AppCompete from "./AppCompete/AppCompete";
+import AppClender from "./AppClender/AppClender";
 
 class App extends Component{
     render(){
@@ -19,6 +20,7 @@ class App extends Component{
             <AppRules />
             <AppProcess />
             <AppNews />
+            <AppClender />
             <Appbottom />
       </div>
        )
