@@ -1,73 +1,30 @@
 import React,{Component} from 'react'
-import styles from './index.css'
-import { Calendar, Badge } from 'antd';
+import styles from './Appclender.less'
+import 'antd/dist/antd.css'
+import { Calendar } from 'antd';
 
-
-function getListData(value) {
-    let listData;
-    switch (value.date()) {
-      case 8:
-        listData = [
-          { type: 'warning', content: 'This is warning event.' },
-          { type: 'success', content: 'This is usual event.' },
-        ]; break;
-      case 10:
-        listData = [
-          { type: 'warning', content: 'This is warning event.' },
-          { type: 'success', content: 'This is usual event.' },
-          { type: 'error', content: 'This is error event.' },
-        ]; break;
-      case 15:
-        listData = [
-          { type: 'warning', content: 'This is warning event' },
-          { type: 'success', content: 'This is very long usual event。。....' },
-          { type: 'error', content: 'This is error event 1.' },
-          { type: 'error', content: 'This is error event 2.' },
-          { type: 'error', content: 'This is error event 3.' },
-          { type: 'error', content: 'This is error event 4.' },
-        ]; break;
-      default:
-    }
-    return listData || [];
-  }
-  
-  function dateCellRender(value) {
-    const listData = getListData(value);
-    return (
-      <ul className={styles.events}>
-        {
-          listData.map(item => (
-            <li key={item.content}>
-              <Badge status={item.type} text={item.content} />
-            </li>
-          ))
-        }
-      </ul>
-    );
-  }
-  
-  function getMonthData(value) {
-    if (value.month() === 8) {
-      return 1394;
-    }
-  }
-  
-  function monthCellRender(value) {
-    const num = getMonthData(value);
-    return num ? (
-      <div className={styles.notes111}>
-        <section>{num}</section>
-        <span>Backlog number</span>
-      </div>
-    ) : null;
-  }
-  
-  
+function onPanelChange(value, mode) {
+  console.log(value, mode);
+}
 class AppClender extends Component{
     render(){
         return(
-            <div> <Calendar dateCellRender={dateCellRender} monthCellRender={monthCellRender} /></div>
-        )
+          <div className={styles.Calender000}>
+              <p className={styles.words111}>比赛日历</p>
+              <div className={styles.Calender111}>
+                 <Calendar fullscreen={false} onPanelChange={onPanelChange} />
+              </div>
+              <div className={styles.Calender222}>
+              <p>2017年10月比赛</p>
+              </div>
+              <div className={styles.Calender333}>
+                 <ul>
+                   <li></li>
+                   <li></li> 
+                 </ul>
+              </div>
+          </div>      
+        );
     }
 }
 

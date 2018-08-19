@@ -52,7 +52,7 @@ class Appbottom extends Component{
                      <img src={require("../../images/wifi信号.png")} alt='wifi'style={{width:'40px',height:'40px'}}/>
                 </div>
                 <div className={styles.Oracle}>
-                   <img src={require("../../images/oracle.png")} alt='oracle' />
+                   <img src={require("../../images/oracle.png")} alt='oracle'style={{width:'441px',height:'83px'}}/>
                 </div>
             </div>
         )
