@@ -77,12 +77,12 @@ class AppHeader extends Component{
           <MenuItemGroup title="">
         <div className={styles.teacherload}>
           <div className={styles.teacherload1}><p >教练登录</p><br/>
-         <Button type="primary" loading>
+         <Button type="primary" loading >
               登录
         </Button>
          </div>
             <div className={styles.teacherload2}><p style={{marginTop:'-50px'}}>队员登录</p><br/>
-               <Button type="primary" loading>
+               <Button type="primary" loading >
           登录
         </Button>
             </div>
