@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import styles from './AppMessage.less'
-import { Menu, Icon,Input,Dropdown} from 'antd';
+import { Menu, Icon,Dropdown} from 'antd';
 
 
 
@@ -46,7 +46,7 @@ class AppMessage extends Component{
                         <img src={require('../../images/talk.png')} alt='shouye'/><br/>
                         <Dropdown overlay={menu}>
                       <a className="ant-dropdown-link" href=" ">
-                      夏季论坛<Icon type="down" />
+                      <span>夏季论坛</span><Icon type="down" />
                       </a>
                       </Dropdown>
                     </li>
