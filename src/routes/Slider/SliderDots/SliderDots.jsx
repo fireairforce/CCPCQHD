@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import styles from '../Slider.scss'
 
 export default class SliderDots extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
 
   handleDotClick(i) {
     var option = i - this.props.nowLocal;

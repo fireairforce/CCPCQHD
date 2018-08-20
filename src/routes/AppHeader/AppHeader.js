@@ -1,7 +1,11 @@
 import React,{Component} from 'react'
 import styles from './AppHeader.less'
 import { Menu, Dropdown, Input,Divider,Button } from 'antd'
-import 'antd/dist/antd.css'
+/**
+ * 
+ * 
+ * 两个bug
+ * */
 
 const SubMenu = Menu.SubMenu
 const Search = Input.Search

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import styles from '../Slider.scss'
 
 export default class SliderItem extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   render() {
     let { count, item } = this.props;

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import styles from '../Slider.scss'
 
 export default class SliderArrows extends Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   handleArrowClick(option) {
     this.props.turn(option);
