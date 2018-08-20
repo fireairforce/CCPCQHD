@@ -41,7 +41,7 @@ class AppCompete extends Component{
 
         return(
             <div className={styles.AppCompete}>
-                <Tabs defaultActiveKey="1" onChange={callback}  size='large' >
+                <Tabs defaultActiveKey="1" onChange={callback}  size='large'>
                   <TabPane tab="最新比赛" key="1"  >
                   
             <div style={{ background: '#ECECEC', padding: '30px',width:'94%',marginLeft:'3%'}}>
