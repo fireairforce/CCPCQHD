@@ -4,8 +4,10 @@
 }
 .slider {
   overflow: hidden;
-  width: 100%;
+  width:1900px;
+   height:auto;
   position: relative;
+
   
   &>ul {
     height: auto;
@@ -101,7 +103,7 @@
       }
 
       &.sliderDotSelected {
-        background: #ccc;
+        background:#ccc;
       }
     }
   }

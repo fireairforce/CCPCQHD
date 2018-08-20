@@ -12,8 +12,8 @@ function callback(key) {
   console.log(key);
 }
 const card=(
-    <Col span={8}>
-    <Card title="" bordered={false}> 
+    <Col span={8} >
+    <Card title="" bordered={false} style={{ backgroundColor: '#ECECEC'}}> 
         <div style={{wdith:498,height:664}}>
         <div >
          <img src='https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png' alt='hz' style={{width:'498px',height:'356px'}}/>
@@ -41,13 +41,13 @@ class AppCompete extends Component{
 
         return(
             <div className={styles.AppCompete}>
-                <Tabs defaultActiveKey="1" onChange={callback} tabBarGutter='500px' size='large'>
+                <Tabs defaultActiveKey="1" onChange={callback}  size='large'>
                   <TabPane tab="最新比赛" key="1"  >
                   
-            <div style={{ background: '#ECECEC', padding: '30px'}}>
-            <Row gutter={16}>
+            <div style={{ background: '#ECECEC', padding: '30px',width:'94%',marginLeft:'3%'}}>
+            <Row gutter={16} >
       
-      {card}
+      {card }
       {card}
       {card}
     </Row>
