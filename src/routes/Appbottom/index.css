@@ -1,0 +1,69 @@
+@media (max-width: 600px) {
+    .facet_sidebar {
+      display: none;
+    }
+  }
+@media screen and (min-width:480){
+    
+}
+.copyright {
+    width: 1400px;
+    height: 341px;
+    background-color: #003b4d;
+    margin-top: 10px;
+    margin: 0 auto;
+    clear: both;
+    
+}
+.copyright_content {
+    width: 1400px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-left: 340px;
+    position: absolute;
+}
+
+.copyright_content li {
+    list-style-type: none;
+    float: left;
+    width: 250px;
+    text-align: left;
+    line-height: 30px;
+    font-family: "微软雅黑";
+}
+
+.copyright_content a {
+    margin-right:80px;
+    text-decoration: none;
+    color: #fff;  
+    font-size: 18px;  
+}
+.copyright_content .copyright_link{
+    position: relative;
+    font-weight: bold;
+}
+.copyright_content li ul li a {
+    font-size: 14px;
+ 
+}
+.copyright_content ul li ul li {
+    margin-right: 80px;
+    font-size: 14px;
+}
+.line{
+    position: relative;
+    width:1000px;
+    text-align: center;
+    top:200px;
+    left: 200px;
+}
+.Images{
+    position: relative;
+    top:240px;
+    left: 1000px;
+}
+.Oracle{
+    position: relative;
+    top:170px;
+    left:350px;
+}
