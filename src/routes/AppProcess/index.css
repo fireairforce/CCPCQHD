@@ -1,0 +1,32 @@
+.process111{
+    width: 1400px;
+    height: 400px;
+    background-color: #fff;
+    position: relative;
+    margin: 0 auto;
+}
+.process222{
+    width: 586px;
+    height: 100px;
+    position: absolute;
+    margin-top: 70px;
+    margin-left:400px;
+}
+.process333{
+    font-size: 28px;
+    color: rgba(16, 16, 16, 1);
+    text-align: center;
+}
+.line111{
+    position: relative;
+    width:1400px;
+    top:170px;
+}
+.Icon111{
+    position: relative;
+    top:180px;
+    float: left;
+}
+.Icon111 img{
+    margin-left: 60px;
+}
