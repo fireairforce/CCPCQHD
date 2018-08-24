@@ -6,13 +6,13 @@ import Appbottom from './Appbottom/Appbottom'
 import AppHeader from './AppHeader/AppHeader'
 import AppSLider from './Slider/index'
 import AppMessage from './AppMessage/AppMessage'
-import AppCompete from "./AppCompete/AppCompete";
-import AppClender from "./AppClender/AppClender";
-
+import AppCompete from "./AppCompete/AppCompete"
+import AppClender from "./AppClender/AppClender"
+import styles from "../routes/index.css"
 class App extends Component{
     render(){
        return(
-        <div>
+        <div className={styles.Main1}>
             <AppHeader />
             <AppSLider />
             <AppMessage />

@@ -1,11 +1,4 @@
-@media (max-width: 600px) {
-    .facet_sidebar {
-      display: none;
-    }
-  }
-@media screen and (min-width:480){
-    
-}
+
 .copyright {
     width: 1400px;
     height: 341px;
@@ -19,14 +12,14 @@
     width: 1400px;
     margin: 0 auto;
     padding-top: 30px;
-    padding-left: 340px;
+    padding-left: 200px;
     position: absolute;
 }
 
 .copyright_content li {
     list-style-type: none;
     float: left;
-    width: 250px;
+    width: 260px;
     text-align: left;
     line-height: 30px;
     font-family: "微软雅黑";
@@ -65,5 +58,5 @@
 .Oracle{
     position: relative;
     top:170px;
-    left:350px;
+    left:200px;
 }
