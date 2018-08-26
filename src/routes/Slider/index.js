@@ -5,15 +5,15 @@ import Slider from './Slider';
 
 const IMAGE_DATA = [
   {
-    src: require('../../images/haligong.png'),
+    src: "http://pdx2xd16q.bkt.clouddn.com/haligong.png",
     alt: 'images-1',
   },
   {
-    src: require('../../images/zjlg.jpg'),
+    src: "http://pdx2xd16q.bkt.clouddn.com/zjlg.jpg",
     alt: 'images-2',
   },
   {
-    src: require('../../images/hgd.png'),
+    src: "http://pdx2xd16q.bkt.clouddn.com/hgd.png",
     alt: 'images-3',
   }
 ];

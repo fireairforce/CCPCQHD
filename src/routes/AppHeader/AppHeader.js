@@ -1,7 +1,6 @@
 import React,{Component} from 'react'
 import styles from './AppHeader.less'
 import { Menu, Dropdown, Input,Divider,Button } from 'antd'
-import logo from '../../images/logo.png'
 /**
  * 
  * 
@@ -54,10 +53,10 @@ class AppHeader extends Component{
         return(
             <div className={styles.AppHeader}>
                 <ul className={styles.nav}>
-                 <li><img src={logo} alt='logo' className={styles.logo}/></li>
+                 <li><img src="http://pdx2xd16q.bkt.clouddn.com/logo.png" alt='logo' className={styles.logo}/></li>
                     <li>
                       <Dropdown overlay={menu} >
-                        <img src={require('../../images/menu.png')} alt='f'/>
+                        <img src="http://pdx2xd16q.bkt.clouddn.com/menu.png" alt='f'/>
                       </Dropdown>
                     </li>
                     <li className={styles.search}>快速查询</li>
@@ -71,10 +70,9 @@ class AppHeader extends Component{
 
                 </ul>
                 <ul className={styles.main}>
-                    <li><img src={require('../../images/login.png')} alt='login' className={styles.photo}/></li>
+                    <li><img src="http://pdx2xd16q.bkt.clouddn.com/login.png" alt='login' className={styles.photo}/></li>
                     <li>
-                    <Menu
-        onClick={this.handleClick}
+                  <Menu onClick={this.handleClick}
         selectedKeys={[this.state.current]}
         mode="horizontal"
         style={{backgroundColor:'aliceblue'}}
@@ -98,9 +96,9 @@ class AppHeader extends Component{
         </SubMenu>
         </Menu>
                       </li>
-                    <li><img src={require('../../images/resigiter.png')} alt='resigter' className={styles.photo}/> </li>
+                    <li><img src="http://pdx2xd16q.bkt.clouddn.com/resigiter.png" alt='resigter' className={styles.photo}/> </li>
                     <li>注册</li>
-                    <li><img src={require('../../images/help.png')} alt='help' className={styles.photo}/> </li>
+                    <li><img src="http://pdx2xd16q.bkt.clouddn.com/help.png" alt='help' className={styles.photo}/> </li>
                     <li>帮助</li>
                 </ul>
              

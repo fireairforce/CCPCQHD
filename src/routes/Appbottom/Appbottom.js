@@ -44,15 +44,15 @@ class Appbottom extends Component{
                 </div>
                 <hr className={styles.line}/>
                 <div className={styles.Images}>
-                     <img src={require("../../images/facebook.png")} alt="facebook" style={{width:'40px',height:'40px'}}/>
-                     <img src={require("../../images/Twitter.png")} alt='Twitter'style={{width:'40px',height:'40px'}}/>
-                     <img src={require("../../images/instagram.png")} alt='instagram' style={{width:'40px',height:'40px'}}/>
-                     <img src={require("../../images/google-plus-box.png")} alt='google' style={{width:'40px',height:'40px'}}/>
-                     <img src={require("../../images/youtube.png")} alt='youtube'style={{width:'40px',height:'40px'}}/>
-                     <img src={require("../../images/wifi信号.png")} alt='wifi'style={{width:'40px',height:'40px'}}/>
+                     <img src="http://pdx2xd16q.bkt.clouddn.com/facebook.png" alt="facebook" style={{width:'40px',height:'40px'}}/>
+                     <img src="http://pdx2xd16q.bkt.clouddn.com/Twitter.png" alt='Twitter'style={{width:'40px',height:'40px'}}/>
+                     <img src="http://pdx2xd16q.bkt.clouddn.com/instagram.png" alt='instagram' style={{width:'40px',height:'40px'}}/>
+                     <img src="http://pdx2xd16q.bkt.clouddn.com/google-plus-box.png" alt='google' style={{width:'40px',height:'40px'}}/>
+                     <img src="http://pdx2xd16q.bkt.clouddn.com/youtube.png"alt='youtube'style={{width:'40px',height:'40px'}}/>
+                     <img src="http://pdx2xd16q.bkt.clouddn.com/wifi%E4%BF%A1%E5%8F%B7.png" alt='wifi'style={{width:'40px',height:'40px'}}/>
                 </div>
                 <div className={styles.Oracle}>
-                   <img src={require("../../images/oracle.png")} alt='oracle'style={{width:'441px',height:'83px'}}/>
+                   <img src="http://pdx2xd16q.bkt.clouddn.com/oracle.png" alt='oracle'style={{width:'441px',height:'83px'}}/>
                 </div>
             </div>
         )

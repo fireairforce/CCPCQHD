@@ -15,7 +15,7 @@ const card=(
     <Col span={8} >
     <Card title="" bordered={false} style={{ backgroundColor: '#ECECEC'}} > 
         <div style={{wdith:498,marginLeft:'-10px'}}  className={styles.float}>
-           <img src={require('../../images/hgd.png')} alt='hz' style={{width:'398px',height:'356px'}} className={styles.imgs}/>   
+           <img src="http://pdx2xd16q.bkt.clouddn.com/hgd.png" alt='hz' style={{width:'398px',height:'356px'}} className={styles.imgs}/>   
             <div className={styles.card}>
                 <div className={styles.itd}>
                   CCPC 2017杭州站<br/>

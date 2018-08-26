@@ -10,7 +10,7 @@ class AppNews extends Component{
                  </div>
                  <div className={styles.news444}>
                         <div className={styles.news4440}>
-                            <img src={require("../../images/test.jpg")} alt='test1' style={{width:'300px',height:'225px'}}/>
+                            <img src="http://pdx2xd16q.bkt.clouddn.com/test.jpg" alt='test1' style={{width:'300px',height:'225px'}}/>
                             <div className={styles.news44410}>
                               <p className={styles.news}>To be or not to be,that is a question.</p>
                             </div>
@@ -19,7 +19,7 @@ class AppNews extends Component{
                             </div>
                         </div>
                         <div className={styles.news4440}>
-                             <img src={require("../../images/test.jpg")} alt='test2' style={{width:'300px',height:'225px'}}/>
+                             <img src="http://pdx2xd16q.bkt.clouddn.com/test.jpg" alt='test2' style={{width:'300px',height:'225px'}}/>
                              <div className={styles.news44411}>
                              <p className={styles.news}>To be or not to be,that is a question.</p>
                             </div>
@@ -28,7 +28,7 @@ class AppNews extends Component{
                             </div>
                         </div>     
                         <div className={styles.news4440}>
-                             <img src={require("../../images/test.jpg")} alt='test3' style={{width:'300px',height:'225px'}}/>
+                             <img src="http://pdx2xd16q.bkt.clouddn.com/test.jpg" alt='test3' style={{width:'300px',height:'225px'}}/>
                              <div className={styles.news44412}>
                              <p className={styles.news}>To be or not to be,that is a question.</p>
                             </div>
@@ -37,7 +37,7 @@ class AppNews extends Component{
                             </div>
                         </div>
                         <div className={styles.news4440}>
-                             <img src={require("../../images/test.jpg")} alt='test4' style={{width:'300px',height:'225px'}}/>
+                             <img src="http://pdx2xd16q.bkt.clouddn.com/test.jpg" alt='test4' style={{width:'300px',height:'225px'}}/>
                              <div className={styles.news44413}>
                              <p className={styles.news}>To be or not to be,that is a question.</p>
                             </div>

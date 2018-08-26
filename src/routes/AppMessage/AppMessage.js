@@ -19,31 +19,31 @@ class AppMessage extends Component{
             <div className={styles.AppMessage}>
                 <ul className={styles.list}>
                     <li>
-                        <img src={require('../../images/c shouye.png')} alt='shouye'/><br/>
+                        <img src="http://pdx2xd16q.bkt.clouddn.com/c%20shouye.png" alt='shouye'/><br/>
                        <span>首页</span>
                     </li>
                     <li>
-                        <img src={require('../../images/itd.png')} alt='shouye'/><br/>
+                        <img src="http://pdx2xd16q.bkt.clouddn.com/itd.png" alt='shouye'/><br/>
                     <span>协会简介</span>
                     </li>
                     <li>
-                        <img src={require('../../images/c tong zhi.png')} alt='shouye'/><br/>
+                        <img src="http://pdx2xd16q.bkt.clouddn.com/c%20tong%20zhi.png" alt='shouye'/><br/>
                       <span>通知公告</span>
                     </li>
                     <li>
-                        <img src={require('../../images/c bangdan.png')} alt='shouye'/><br/>
+                        <img src="http://pdx2xd16q.bkt.clouddn.com/c%20bangdan.png" alt='shouye'/><br/>
                        <span>比赛榜单</span>
                     </li>
                     <li>
-                        <img src={require('../../images/c linian.png')} alt='shouye'/><br/>
+                        <img src="http://pdx2xd16q.bkt.clouddn.com/c%20linian.png" alt='shouye'/><br/>
                      <span>历年比赛</span>
                     </li>
                     <li>
-                        <img src={require('../../images/bl.png')} alt='shouye'/><br/>
+                        <img src="http://pdx2xd16q.bkt.clouddn.com/bl.png" alt='shouye'/><br/>
                       <span>证书查看</span>
                     </li>
                     <li>
-                        <img src={require('../../images/c luntan.png')} alt='shouye'/><br/>
+                        <img src="http://pdx2xd16q.bkt.clouddn.com/c%20luntan.png" alt='shouye'/><br/>
                         <Dropdown overlay={menu}>
                       <a className="ant-dropdown-link" href=" ">
                       <span>夏季论坛</span>
