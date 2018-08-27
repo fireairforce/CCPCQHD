@@ -16,7 +16,7 @@ class LoginPage extends React.Component {
         let p = this.props.form.getFieldsValue().password;
         if (n === '123' && p === '123') {
             // 表单的路由处理
-            history.push('/');
+            history.push('/manage');
         } else {
             this.openNotificationWithIcon('info');
         }
@@ -39,7 +39,7 @@ class LoginPage extends React.Component {
     render() {
         const { getFieldDecorator } = this.props.form
         return (
-            <div className={styles.loginpagewrap}>
+            <div className={styles.loginPageWrap}>
                 <div className={styles.box}>
                     <p>Welcome to the lovenet</p>
                     <div className={styles.loginWrap}>

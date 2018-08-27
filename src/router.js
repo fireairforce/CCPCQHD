@@ -13,11 +13,16 @@ function RouterConfig({ history,app }) {
     app,
     component: () => import('./routes/Login/Login')
   })
+  const Manage =dynamic({
+    app,
+    component:()=>import('./routes/manage/index')
+  })
   return (
     <Router history={history}>
             <Switch>
                 <Route path="/" exact component={App} />
                 <Route path="/login" exact component={Login} />
+                <Route path='/manage' component={Manage} />
             </Switch>
         </Router>
 
