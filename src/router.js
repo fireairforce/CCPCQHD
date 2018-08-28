@@ -27,9 +27,6 @@ function RouterConfig({ history,app }) {
                 <Route path='/manage' component={Manage} />
             </Switch>
         </Router>
-  
-
-
   );
 }
 
