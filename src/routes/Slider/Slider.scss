@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.slider {
+  overflow: hidden;
+  width:1400px;
+   //height:auto;
+  position: relative;
+  margin: 0 auto;
+
+  
+  &>ul {
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    left: 0;
+    transition: left 1s;
+  }
+
+  .sliderItem {
+    display: inline-block;
+    height: auto;
+
+    &>img {
+      display: block;
+      height: auto;
+       width: 100%
+    }
+  }
+
+  // .sliderArrowsWrap {
+  //   display: inline-block;
+  //   color: #fff;
+  //   font-size: 50px;
+  //   position: absolute;
+  //   top: 50%;
+  //   margin-top: -50px;
+  //   z-index: 100;
+  //   padding: 20px;
+  //   cursor: pointer;
+  //   font-weight: bold;
+
+    &:hover {
+      background: rgba(0,0,0,.2);
+    }
+  }
+  //   &:hover {
+  //     background: rgba(0,0,0,.2);
+  //   }
+  // }
+   
+    .sliderArrowRight {
+      left: 0;
+      display: inline-block;
+      color: #fff;
+      font-size: 50px;
+      position: absolute;
+      top: 50%;
+      margin-top: -50px;
+      z-index: 100;
+      padding: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      :hover{
+        background: rgba(0,0,0,.2);
+      }
+    }
+  
+  .sliderArrowLeft {
+    right: 0;
+    display: inline-block;
+    color: #fff;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    z-index: 100;
+    padding: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    :hover{
+      background: rgba(0,0,0,.2);
+    }
+  }
+  .sliderDotsWrap {
+    z-index: 99;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top:-200px;
+
+    .sliderDot {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 3px solid #ccc;
+      margin: 6px;
+      cursor: pointer;
+      border-radius: 20px;
+   
+
+      &:hover {
+        border: 3px solid #868686;
+      }
+
+      &.sliderDotSelected {
+        background:red;
+      }
+    }
+  }
+
+
