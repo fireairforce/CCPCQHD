@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import dynamic from 'dva/dynamic'
 
 import { Router, Route, Switch } from 'dva/router';
@@ -30,6 +31,19 @@ function RouterConfig({ history,app }) {
   
 
 
+=======
+import { Router, Route, Switch } from 'dva/router';
+// import IndexPage from './routes/IndexPage';
+import App from './routes/index'
+
+function RouterConfig({ history }) {
+  return (
+    <Router history={history}>
+      <Switch>
+        <Route path="/" exact component={App} />
+      </Switch>
+    </Router>
+>>>>>>> 4d6609c2a0dff093d71840b24fe034a62120662e
   );
 }
 
