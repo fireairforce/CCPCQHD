@@ -23,10 +23,10 @@ const card=(
                   11月4-5日<br/>
                 </div>
             </div>
-        </div>
+           </div>
         <div style={{lineHeight:4}} className={styles.more}>
                 了解更多
-            </div>
+        </div>
      </Card>
 </Col>
 )

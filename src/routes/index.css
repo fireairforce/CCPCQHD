@@ -1,4 +1,6 @@
 .Main1{
-    background-color: #bec0c2;
+    background:#fff;
+    border: 1px solid #bec0c2;
+    border-bottom: none;
    /* overflow-x: hidden; */
 }
