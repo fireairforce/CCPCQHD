@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-class AA extends Component{
+class Index extends Component{
     render(){
         return(
             <div>
@@ -8,4 +8,4 @@ class AA extends Component{
         )
     }
 }
-export default AA
+export default Index
