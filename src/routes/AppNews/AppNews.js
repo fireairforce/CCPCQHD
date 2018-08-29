@@ -1,6 +1,8 @@
 import React,{Component} from 'react'
 import styles from './index.css'
+import createHistory from 'history/createHashHistory';
 
+const history=createHistory();
 class AppNews extends Component{
     render(){
         return(
@@ -9,7 +11,7 @@ class AppNews extends Component{
                      <p className={styles.news333}>焦点新闻</p> 
                  </div>
                  <div className={styles.news444}>
-                        <div className={styles.news4440}>
+                        <div className={styles.news4440}  onClick={()=>{history.push('./focus')}}>
                             <img src="http://pdx2xd16q.bkt.clouddn.com/test.jpg" alt='test1' style={{width:'300px',height:'225px'}}/>
                             <div className={styles.news44410}>
                               <p className={styles.news}>To be or not to be,that is a question.</p>

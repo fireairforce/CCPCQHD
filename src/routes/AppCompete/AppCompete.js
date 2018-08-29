@@ -7,7 +7,6 @@ const TabPane = Tabs.TabPane;
 
 // const TabPane = Tabs.TabPane;
 // const { Meta } = Card;
-
 function callback(key) {
   console.log(key);
 }

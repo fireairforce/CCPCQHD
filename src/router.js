@@ -25,11 +25,10 @@ function RouterConfig({ history,app }) {
                 <Route path="/" exact component={App} />
                 <Route path="/login"  component={Login} />
                 <Route path='/manage' component={Manage} />
+                <Route path="/news" component={News} />
+                <Route path="/focus" component={Focus} />
             </Switch>
         </Router>
-  
-
-
   );
 }
 

@@ -8,11 +8,13 @@ import AppSLider from './Slider/index'
 import AppMessage from './AppMessage/AppMessage'
 import AppCompete from "./AppCompete/AppCompete"
 import AppClender from "./AppClender/AppClender"
+import NewsSecond from "./NewsSecond/NewsSecond"
 import styles from "../routes/index.css"
 class App extends Component{
     render(){
        return(
         <div className={styles.Main1}>
+            {/* <NewsSecond /> */}
             <AppHeader />
             <AppSLider />
             <AppMessage />
