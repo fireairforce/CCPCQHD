@@ -1,0 +1,36 @@
+.FocusContainer{
+    background:white;
+    width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid #bec0c2;
+}
+.FocusHeader{
+    margin: 0 auto;
+    width: 1200px;
+    height: 500px;
+    border: 1px solid #bec0c2;
+    margin-bottom: 20px;
+}
+.FocusBody{
+    margin: 0 auto;
+    background: #bec0c2;
+    width: 1400px;
+    border: 1px solid #bec0c2;
+}
+.FocusBodyOne{
+    background: #fff;
+    width: 1200px;
+    margin-left: 100px;
+    margin-top: 20px;   
+}
+.FocusBodyOne h2{
+    padding-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+.FocusBodyOne p{
+    font-size: 18px;
+    margin-left: 10px;
+    text-indent: 2em;
+}

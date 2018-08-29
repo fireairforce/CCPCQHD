@@ -10,7 +10,7 @@ class AppProcess extends Component{
               </div>
               <hr className={styles.line111} />
               <div className={styles.Icon111}>
-                     <img src="http://pdx2xd16q.bkt.clouddn.com/%E8%AE%BE%E7%BD%AE-1.png" alt="setti" style={{width:'80px',height:'80px'}}/>
+                     <img src="http://pdx2xd16q.bkt.clouddn.com/%E8%AE%BE%E7%BD%AE-1.png" alt="setti"style={{width:'80px',height:'80px'}}/>
                      <img src="http://pdx2xd16q.bkt.clouddn.com/%E8%A1%A8%E5%8D%95.png" alt='biaodan'style={{width:'80px',height:'80px'}}/>
                      <img src="http://pdx2xd16q.bkt.clouddn.com/%E5%B8%88%E8%B5%84%E9%98%9F%E4%BC%8D.png" alt='team'style={{width:'80px',height:'80px'}}/>
                      <img src="http://pdx2xd16q.bkt.clouddn.com/%E5%B7%A5%E5%8E%82.png" alt='factory' style={{width:'80px',height:'80px'}}/>
