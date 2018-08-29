@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import AppHeader from '../AppHeader/AppHeader'
 import styles from './index.css'
 
+
 class NewsSecond extends Component{
     render(){
         return(
