@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import styles from './AppHeader.less'
-import { Menu, Dropdown, Input,Divider,Button } from 'antd'
+import { Menu, Dropdown, Input,Divider,Button,message } from 'antd'
 /**
  * 
  * 
@@ -36,7 +36,7 @@ const menu = (
     </Menu>
   )
 const MenuItemGroup = Menu.ItemGroup;
-
+const bxw=this;
 class AppHeader extends Component{
   state = {
     current: 'mail',
@@ -48,7 +48,30 @@ class AppHeader extends Component{
       current: e.key,
     });
   }
+  componentDidMount(){
+    fetch('http://form.andyhui.xin/evaluation', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    }).then((res) => {
+      return res.json()
 
+    }).then((json) => {
+      console.log('json',json)
+      if (json.code === 1000) {
+        console.log('json'.json)
+        this.props.dispatch({
+          type: 'app/allMessage',
+          payload: json.data.info
+        })
+        this.setState({submitted: true})
+      }
+    }).catch((e) => {
+      console.log(e)
+    })
+    
+  }
     render(){
         return(
             <div className={styles.AppHeader}>
