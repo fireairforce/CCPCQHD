@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import styles from '../secondIndex.css'
 
-const focusbodyHeader=(
+const focusbodyHeaderOne=(
     <div className={styles.FocusBodyOne}>
     <h2>Amazing!CHY has created an OJ for NEUQ</h2>
     <hr />
@@ -25,7 +25,7 @@ const focusbodyHeader=(
         Find your city below for full session description, agenda, and logistical details.</p>
  </div>
 )
-export default class FocusSecond extends Component{
+export default class FocusSecondOne extends Component{
    render(){
        return(
            <div className={styles.FocusContainer}>
@@ -33,7 +33,7 @@ export default class FocusSecond extends Component{
                  <img src={require("../../images/advertisement.png")} alt="logo" style={{width:'1200px',height:'500px'}}/>
               </div>
               <div className={styles.FocusBody}>
-                {focusbodyHeader}
+                {focusbodyHeaderOne}
               </div>
            </div>
        )

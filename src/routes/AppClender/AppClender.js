@@ -18,10 +18,6 @@ class AppClender extends Component{
               <p>2017年10月比赛</p>
               </div>
               <div className={styles.Calender333}>
-                 {/* <ul>
-                   <li></li>
-                   <li></li> 
-                 </ul> */}
               </div>
           </div>      
         );
