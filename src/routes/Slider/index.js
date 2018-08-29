@@ -1,4 +1,5 @@
 import React, {Component}from 'react';
+import '../manage/page/slider/index'
 
 import Slider from './Slider';
 
