@@ -21,11 +21,14 @@
 .FocusBodyOne{
     background: #fff;
     width: 1200px;
-    margin-left: 100px;
-    margin-top: 20px;   
+    margin-left: 100px;  
+    border: 1px solid #bec0c2;
 }
-.FocusBodyOne h2{
-    padding-top: 15px;
+.FocusBodyHeader{
+    width: 1200px;
+    background: #fff;
+    margin: 0 auto;
+    font-size: 38px;
     font-weight: bold;
     text-align: center;
 }

@@ -1,16 +1,11 @@
 import React from 'react'
-<<<<<<< HEAD
-import {Button,Input,Divider,Table,message,Popconfirm,Icon,Upload,Form} from 'antd'
-=======
 import ReactDOM from 'react-dom'
-import {Button,Input,Divider,Table,message,Popconfirm} from 'antd'
->>>>>>> origin/master
+import {Button,Input,Divider,Table,message,Popconfirm,Form,Icon,Upload} from 'antd'
 import styles from './game.less'
 import BraftEditor from 'braft-editor'
 import 'braft-editor/dist/braft.css'
 
 
-<<<<<<< HEAD
 const FormItem=Form.Item
 function getBase64(img, callback) {
   const reader = new FileReader();
@@ -25,8 +20,7 @@ function beforeUpload(file) {
   }
   return  isLt2M;
 }
-=======
->>>>>>> origin/master
+
 const handleChange = (content) => {
   console.log(content)
 }
@@ -43,8 +37,6 @@ const editorProps = {
   contentId:1
 }
 
-<<<<<<< HEAD
-=======
 const editor=(
   <div className={styles.input}>
         比赛类型：<Input placeholder="请输入比赛类型"  id='type'/>
@@ -52,16 +44,11 @@ const editor=(
         比赛时间：<Input placeholder="请输入比赛时间"  id='time'/>
    </div>
 )
->>>>>>> origin/master
 const columns = [{
   title: '比赛类型',
   dataIndex: 'type',
   key: 'type',
-<<<<<<< HEAD
-  render: text => <a href=" ">{text}</a>,
-=======
   render: text => <a href="javascript:;">{text}</a>,
->>>>>>> origin/master
 }, {
   title: '比赛地点',
   dataIndex: 'address',
@@ -108,7 +95,6 @@ const confirm = () => {
 const cancel=()=> {
   message.error('取消成功'); 
 }
-
 
 const onChange=()=>{
   console.log(editorProps.contentId)

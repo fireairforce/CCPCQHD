@@ -21,6 +21,14 @@ function RouterConfig({ history,app }) {
     app,
     component:()=>import('./routes/NewsSecond/NewsSecond')
   })
+  const NewsOne =dynamic({
+    app,
+    component:()=>import('./routes/NewsSecondOne/NewsSecondOne')
+  })
+  const NewsTwo =dynamic({
+    app,
+    component:()=>import('./routes/NewsSecondTwo/NewsSecondTwo')
+  })
   const Focus=dynamic({
     app,
     component:()=>import('./routes/FocusSecond/FocusSecond')
@@ -44,6 +52,8 @@ function RouterConfig({ history,app }) {
                 <Route path="/login"  component={Login} />
                 <Route path='/manage' component={Manage} />
                 <Route path="/news" component={News} />
+                <Route path="/news1" component={NewsOne} />
+                <Route path="/news2" component={NewsTwo} />
                 <Route path="/focus" component={Focus} />
                 <Route path="/focus1" component={FocusOne} />
                 <Route path="/focus2" component={FocusTwo} />
