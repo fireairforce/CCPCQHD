@@ -1,7 +1,8 @@
 import React,{Component}from 'react'
-import {Button,Input,Divider,Popconfirm,Table,Modal,message} from 'antd'
+import {Button,Input,Divider,Popconfirm,Table,Modal,message,Form} from 'antd'
 import 'antd/dist/antd.css'
 
+const FormItem=Form.Item
 
 
 
@@ -37,9 +38,58 @@ const confirm = () => {
 const cancel=()=> {
   message.error('取消成功'); 
 }
+@Form.create()
 class Menu extends Component{
- state = { visible: false }
-  
+  constructor(props){
+    super(props)
+    this.state={
+      visible: false ,
+      loading: false
+    }
+    this.handleSubmit=this.handleSubmit.bind(this)
+  }
+ handleSubmit(e){
+  // e.preventDefalut()
+   e.preventDefault()
+   const ctx=this;
+   this.props.form.validateFieldsAndScroll((err,values)=>{
+     if(err){console.log(err)}else{
+   
+      const body={
+        ...values,
+        ...ctx.state.competeType,
+        ...ctx.state.details
+      }
+      body.competePlace="null"
+      body.competeTime="null"
+      body.text="null"
+      body.status="null"
+      body.title="null"
+      body.previewImg="null"
+        console.log(body)
+      fetch('https://ccpc.ela.moe/headerNavs',{
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json',
+          'token':'123123'
+        },
+        body:JSON.stringify(body)
+
+      }).then((res)=>{
+        return res.json()
+      }).then((json)=>{
+        console.log('json',json)
+        if(json.code===0){
+          message.success('提交成功')
+        }
+      }).catch((e)=>{
+        console.log(e)
+      })
+     }
+   })
+ }
+
+ 
   render(){
     const showModal = () => {
       this.setState({
@@ -84,12 +134,49 @@ class Menu extends Component{
         </span>
       ),
     }];
+    const {getFieldDecorator}=this.props.form
     return(
       <div>
         <div>
-        比赛类型：<Input placeholder="请输入比赛类型"  id='type'/>
-        具体信息：<Input placeholder="请输入具体信息"  id='news'/>
-        <Button >提交</Button>
+        <Form >
+          <FormItem
+                label='比赛类型'
+                key='form-content-competeType'
+              >
+                {getFieldDecorator('competeType',{
+                rules: [{
+                    required:true
+                  }]})(
+                 <Input placeholder="请输入比赛类型"  />
+                )}
+         </FormItem>
+         <FormItem
+                label='具体信息'
+              
+                key='form-content-details'
+              >
+                {getFieldDecorator('details',{
+                rules: [{
+                    required:true
+                  }]})(
+                <Input placeholder="请输入具体信息"  />
+                )}
+         </FormItem>
+         {/* <FormItem onSubmit={this.handleSubmit}>
+         <Button
+                  type='primary'
+                  htmlType='submit'
+                  className='form-button'
+                  loading={this.state.loading}
+                  disabled={this.state.submitted}
+                >
+                  {this.state.submitted ? '提交成功' : '点击提交'}
+                </Button>
+         </FormItem> */}
+        </Form>
+        <Button type="primary" loading={this.state.loading} onClick={this.handleSubmit}>
+           提交
+          </Button>
         </div>
         <div>
         <Table columns={columns} dataSource={data} />
@@ -107,8 +194,26 @@ class Menu extends Component{
           onCancel={handleCancel}
         >
            <div>
-        比赛类型：<Input placeholder="请输入比赛类型"  id='type'/>
-        具体信息：<Input placeholder="请输入具体信息"  id='news'/>
+       
+         <Form >
+          <FormItem
+                label='比赛类型'
+                key='form-content-competeType1'
+              >
+                {getFieldDecorator('competeType1')(
+                 <Input placeholder="请输入比赛类型"  />
+                )}
+         </FormItem>
+         <FormItem
+                label='具体信息'
+              
+                key='form-content-details1'
+              >
+                {getFieldDecorator('details1')(
+                <Input placeholder="请输入具体信息"  />
+                )}
+         </FormItem>
+        </Form>
         
        
         </div>

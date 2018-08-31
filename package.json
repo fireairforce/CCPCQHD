@@ -12,6 +12,7 @@
     "braft-editor": "^1.9.8",
     "dva": "^2.4.0",
     "node-sass": "^4.9.3",
+    "qiniu": "^7.2.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-draft-wysiwyg": "^1.12.13",

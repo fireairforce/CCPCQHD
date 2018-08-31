@@ -14,7 +14,7 @@ const { Sider } = Layout
 
 export default class Manage extends React.Component {
   state = {
-    theme: 'dark',
+    theme: 'light',
     current: 'index',
     collapsed: false,
     mode: 'inline',  // 水平垂直展现
