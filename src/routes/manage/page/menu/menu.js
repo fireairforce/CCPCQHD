@@ -96,15 +96,9 @@ class Menu extends Component{
     }
     const columns = [{
       title: '比赛类型',
-<<<<<<< HEAD
       dataIndex: 'competeType',
       Key: 'competeType',
       render: text => <a href="javascript（void0）">{text}</a>,
-=======
-      dataIndex: 'type',
-      key: 'type',
-      render: text => <a href="javascript(void0)">{text}</a>,
->>>>>>> 43cffbdd8b0484ba8c5c30fffecf3f5dcee736fd
     }, {
       title: '具体信息',
       dataIndex: 'details',

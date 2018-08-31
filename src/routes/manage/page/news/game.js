@@ -19,8 +19,7 @@ const editorProps = {
   onChange: handleChange,
   onRawChange: handleRawChange,
 }
-const confirm = () => {
-  
+const confirm = () => { 
   message.success('删除成功');
 }
 const cancel=()=> {
