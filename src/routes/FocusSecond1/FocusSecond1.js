@@ -8,7 +8,7 @@ export default class FocusSecondOne extends Component{
        }
    }
    getData(){  
-        fetch('http://192.168.1.66:8888/content/cid/1',{
+        fetch('https://ccpc.elatis.cn/content/type/focusNews',{
         method: 'GET'
         }).then(
             res => res.json()).then(

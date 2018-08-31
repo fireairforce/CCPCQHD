@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import styles from './AppHeader.less'
-import { Menu, Dropdown, Input,Divider,Button,message } from 'antd'
+import { Menu, Dropdown, Input,Divider,Button } from 'antd'
 /**
  * 
  * 
@@ -36,7 +36,7 @@ const menu = (
     </Menu>
   )
 const MenuItemGroup = Menu.ItemGroup;
-const bxw=this;
+// const bxw=this;
 class AppHeader extends Component{
   state = {
     current: 'mail',

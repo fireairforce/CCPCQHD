@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import {Button,Input,Divider,Table,message,Popconfirm,Icon,Upload} from 'antd'
 import styles from './game.less'
 import BraftEditor from 'braft-editor'
@@ -43,7 +42,7 @@ const columns = [{
   title: '标题',
   dataIndex: 'header',
   key: 'header',
-  render: text => <a href="javascript:;">{text}</a>,
+  render: text => <a href="javascript(void0)">{text}</a>,
 }, {
   title: '操作',
   key: 'action',

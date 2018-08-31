@@ -13,7 +13,7 @@ export default class SliderDots extends Component {
 
   render() {
     let dotNodes = [];
-    let { count, nowLocal } = this.props;
+    let { count } = this.props;
     for(let i = 0; i < count; i++) {
       dotNodes[i] = (
         <span

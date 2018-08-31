@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import {Button,Input,Divider,Table,message,Popconfirm,Form,Icon,Upload} from 'antd'
 import styles from './game.less'
 import BraftEditor from 'braft-editor'
@@ -37,18 +36,18 @@ const editorProps = {
   contentId:1
 }
 
-const editor=(
-  <div className={styles.input}>
-        比赛类型：<Input placeholder="请输入比赛类型"  id='type'/>
-        比赛地点：<Input placeholder="请输入比赛地点"  id='adress'/>
-        比赛时间：<Input placeholder="请输入比赛时间"  id='time'/>
-   </div>
-)
+// const editor=(
+//   <div className={styles.input}>
+//         比赛类型：<Input placeholder="请输入比赛类型"  id='type'/>
+//         比赛地点：<Input placeholder="请输入比赛地点"  id='adress'/>
+//         比赛时间：<Input placeholder="请输入比赛时间"  id='time'/>
+//    </div>
+// )
 const columns = [{
   title: '比赛类型',
   dataIndex: 'type',
   key: 'type',
-  render: text => <a href="javascript:;">{text}</a>,
+  render: text => <a href="javascript(void0)">{text}</a>,
 }, {
   title: '比赛地点',
   dataIndex: 'address',

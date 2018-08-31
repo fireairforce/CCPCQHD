@@ -10,34 +10,34 @@ class NewsSecond extends Component{
         }
     }
     getData(){  
-         fetch('http://192.168.1.66:8888/content/cid/1',{
+         fetch('https://ccpc.elatis.cn/content/type/competeNews',{
          method: 'GET'
          }).then(
              res => res.json()).then(
              receive => {
              this.setState({mytext:receive},() => {
-                 console.log('mytext', this.state.mytext.data[4])
-                 // m=this.state.mytext.data[0];
-             }); 
-             console.log(receive.data[4].title);      
+                 console.log('mytext', this.state.url)
+             });     
            }
           )
      }
+
      componentDidMount(){
        this.getData();
      }
     render(){
+        console.log(this.state.mytext.data);
         return(
             <div className={styles.SecondContainer}>
                <AppHeader/>
                <div className={styles.SecondHeader} >
-                    <h1>{this.state.mytext.data ? this.state.mytext.data[4].title : 'null'}</h1>
+                    <h1>{this.state.mytext.data ? this.state.mytext.data[0].title : 'null'}</h1>
                </div> 
                <div className={styles.SecondPic}>
-                  <img src={this.state.mytext.data ? this.state.mytext.data[4].previewImg : 'null'} alt="NEUQ1" style={{width:'1200px',height:'500px'}}/>
+                  <img src={this.state.mytext.data ? this.state.mytext.data[0].previewImg : 'null'} alt="NEUQ1" style={{width:'1200px',height:'500px'}}/>
                </div>
                <div className={styles.SecondContent} 
-               dangerouslySetInnerHTML={{__html: this.state.mytext}}
+               dangerouslySetInnerHTML={{__html: this.state.mytext.data ? this.state.mytext.data[0].text : 'null'}}
                />
             </div> 
         );

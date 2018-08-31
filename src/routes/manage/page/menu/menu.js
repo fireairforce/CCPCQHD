@@ -66,7 +66,7 @@ class Menu extends Component{
       title: '比赛类型',
       dataIndex: 'type',
       key: 'type',
-      render: text => <a href="javascript:;">{text}</a>,
+      render: text => <a href="javascript(void0)">{text}</a>,
     }, {
       title: '具体信息',
       dataIndex: 'news',
