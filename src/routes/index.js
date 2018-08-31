@@ -10,7 +10,7 @@ import AppCompete from "./AppCompete/AppCompete"
 import AppClender from "./AppClender/AppClender"
 import styles from "../routes/index.css"
 class App extends Component{
-    componentWillMount(){
+    componentDidMount(){
         fetch('http://form.andyhui.xin/evaluation', {
           method: 'PUT',
           headers: {
@@ -31,12 +31,12 @@ class App extends Component{
           }
         }).catch((e) => {
           console.log(e)
-        })
-        
+        })    
       }
     render(){
        return(
         <div className={styles.Main1}>
+            {/* <AppSlides /> */}
             <AppHeader />
             <AppSLider />
             <AppMessage />

@@ -27,7 +27,6 @@ const handleChange = (content) => {
 const handleRawChange = (rawContent) => {
   console.log(rawContent)
 }
-
 const editorProps = {
   height: 500,
   contentFormat: 'html',
@@ -86,7 +85,6 @@ const confirm = () => {
 const cancel=()=> {
   message.error('取消成功'); 
 }
-
 
 const onChange=()=>{
   console.log(editorProps.contentId)

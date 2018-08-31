@@ -1,0 +1,43 @@
+.SecondContainer{
+    background:white;
+    width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid #bec0c2;
+}
+.SecondContent{
+    width: 100%;
+    background: #fff;
+    margin: 0 auto;
+}
+.SecondHeader h1{
+    margin-top: 30px;
+    text-align:left;
+    margin-left: 50px;
+}
+.SecondContent{
+    width: 100%;
+}
+.SecondPic{
+    margin: 0 auto;
+    width: 1300px;
+    height: 550px;
+    border: 1px solid #bec0c2;
+    margin-bottom: 20px;
+}
+.SecondPic img{
+    margin-left: 50px;
+    margin-top: 25px;
+}
+.SecondContent {
+    margin: 0 auto;
+    width: 1300px;
+    border: 1px solid #bec0c2;
+    margin-bottom: 20px;
+    padding: 50px;
+}
+.SecondContent p{
+    font-size: 18px;
+    text-indent: 2em;
+}
+
