@@ -1,29 +1,14 @@
 import React from 'react'
-import {Button,Input,Divider,Table,message,Popconfirm,Icon,Upload,Form} from 'antd'
+import {Button,Input,Divider,Table,message,Popconfirm,Form} from 'antd'
 import styles from './game.less'
 import UpLoadPicture from '../../UpLoadPicture'
 import BraftEditor from 'braft-editor'
 import 'braft-editor/dist/braft.css'
 
-
 const FormItem=Form.Item
-function getBase64(img, callback) {
-  const reader = new FileReader();
-  reader.addEventListener('load', () => callback(reader.result));
-  reader.readAsDataURL(img);
-}
-
-function beforeUpload(file) {
-  const isLt2M = file.size / 1024 / 1024 < 2;
-  if (!isLt2M) {
-    message.error('图片不能大于2M');
-  }
-  return  isLt2M;
-}
 const handleChange = (content) => {
   console.log(content)
 }
-
 const handleRawChange = (rawContent) => {
   console.log(rawContent)
 }
@@ -34,104 +19,12 @@ const editorProps = {
   onChange: handleChange,
   onRawChange: handleRawChange,
 }
-const columns = [{
-  title: '比赛类型',
-  dataIndex: 'type',
-  key: 'type',
-  render: text => <a href=" ">{text}</a>,
-}, {
-  title: '比赛地点',
-  dataIndex: 'address',
-  key: 'address',
-}, {
-  title: '比赛时间',
-  dataIndex: 'time',
-  key: 'time',
-},  {
-  title: '操作',
-  key: 'action',
-  render: (text, record) => (
-    <span>
-      <Button onClick={onChange}>修改</Button>
-      <Divider type="vertical" />
-      <Popconfirm title="请确定是否删除" onConfirm={confirm} onCancel={cancel} okText="是" cancelText="否">
-        <Button>删除</Button>
-  </Popconfirm>
-    </span>
-  ),
-}];
-
-const data = [{
-  key: '1',
-  type: 'CCPC 秦皇岛站',
-  address: '东北大学秦皇岛分校',
-  time: '08.08',
- 
-}, {
-  key: '2',
-  type: 'CCPC 秦皇岛站',
-  address: '东北大学秦皇岛分校',
-  time: '08.08',
-}, {
-  key: '3',
-  type: 'CCPC 秦皇岛站',
-  address: '东北大学秦皇岛分校',
-  time: '08.08',
-}];
-const confirm = () => {
-  
+const confirm = () => { 
   message.success('删除成功');
 }
 const cancel=()=> {
   message.error('取消成功'); 
 }
-
-const onChange=()=>{
-  console.log(editorProps.contentId)
-  editorProps.contentId=2
-  console.log(editorProps.contentId)
-  console.log(editorProps.initialContent)
- editorProps.initialContent="我是傻逼"
- console.log(editorProps.initialContent)
-
-}
-// const handleSubmit= (e)=> {
-//   e.preventDefault()
-//   // const ctx=this;
-//   // this.props.form.validateFields((err, values) => {
-//   //   if (err) { console.log(err) } else {
-//       // const body = {
-       
-//       //  ...editorProps.content,
-//       //  //...editorProps.initialContent
-//       //     // ...ctx.state.pointall,
-       
-//       // }
-//       // console.log(body)
-//       // // 处理发送的数据
-//       // fetch('https://ccpc.elatis.cn/writeconten/content.competePlace', {
-//       //   method: 'POST',
-//       //   headers: {
-//       //     'Content-Type': 'application/json'
-//       //   },
-//       //  // body: JSON.stringify(body)
-//       // }).then((res) => {
-//       //   return res.json()
-
-//       // }).then((json) => {
-//       //   console.log('json',json)
-//       //   if (json.code === 1000) {
-//       //     message.success('提交成功')
-//       //     this.props.history.push('/success')
-//       //     this.setState({submitted: true})
-//       //   }
-//       // }).catch((e) => {
-//       //   console.log(e)
-//       // })
-//     // }
-//   // })
-// }
-
 @Form.create()
 class GameNews extends React.Component {
   constructor(props){
@@ -139,37 +32,30 @@ class GameNews extends React.Component {
     this.state = {
       loading: false,
       iconLoading: false,
+      allContent:'',
+      hhhh:''
      
     }
     this.handleSubmit=this.handleSubmit.bind(this)
+    this.handleChangeContent=this.handleChangeContent.bind(this)
+    }
+  componentDidMount(){
+    fetch('https://ccpc.elatis.cn/content/type/competeNews',{
+         method: 'GET'
+         }).then(
+             res => res.json()
+            ).then(
+             receive => {
+             this.setState({
+               allContent:receive,
+               hhhh:receive.data
+              },() => {
+               console.log('a',this.state.hhhh)
+             }); 
+           }
+          )
+          
   }
-  // componentDidMount(){
-  // //   fetch('https://ccpc.elatis.cn/writecontent/content.competePlace',{
-  // //     method:'POST'
-  // //   }) 
-  // // .then((res)=>{
-  // //   return res.text() // res.text()是一个Promise对象
-  // // })
-  // // .then((res)=>{
-  // //   console.log(res)
-  // //   // res是最终的结果
-  // // })
-  // fetch('https://ccpc.elatis.cn/writecontent/account',
-  //  {
-  //   method: 'POST',
-  //   mode: "no-cors",
-  //   // headers: {
-  //   //   'Content-Type': 'application/json'
-  //   // },
-  //   // body: JSON.stringify(body)
-  // })
-  // .then((res)=>{
-  //   return res.text() // 返回一个Promise，可以解析成JSON
-  // })
-  // .then((res)=>{
-  //   console.log(res) // 获取JSON数据
-  // })
-  // }
  handleSubmit(e){
     e.preventDefault()
     const ctx=this;
@@ -182,24 +68,17 @@ class GameNews extends React.Component {
          ...ctx.state.competePlace,
          ...ctx.state.competeTime,
          ...ctx.state.title,
-         
-            // ...ctx.state.pointall,
         }
-      
       content.text=this.editorInstance.getContent()
       content.status='public'
-      content.previewImg='https://cdn.elatis.cn/archives/135/59665229_p0.png'
-      
-       
-        // values.abcd=Upload.action
-       // this.editorInstance.setContent('hasdhasdas')
+      content.previewImg='http://pdx2xd16q.bkt.clouddn.com/zjlg.jpg'
         console.log(content)
        //处理发送的数据
-        fetch('http://192.168.1.66:8888/admin/write/competeNews', {
+        fetch('https://ccpc.elatis.cn/admin/write/competeNews', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'token':'123123'
+            'token':'IgyaO3US8Ju4rJgxiddE75z8pVW1cq7e'
           },
          body: JSON.stringify(content)
         }).then((res) => {
@@ -217,35 +96,60 @@ class GameNews extends React.Component {
     }
   })
   }
-  // handleChange = (info) => {
-  //   if (info.file.status === 'uploading') {
-  //     this.setState({ loading: true });
-  //     return;
-  //   }
-  //   if (info.file.status === 'done') {
-  //     // Get this url from response in real world.
-  //     getBase64(info.file.originFileObj, imageUrl => this.setState({
-  //       imageUrl,
-  //       loading: false,
-  //     }));
-  //   }
-  // }
+  handleChangeContent=()=>{
+    // this.editorInstance.setContent(receive.data[4].text)
+    fetch('https://ccpc.elatis.cn/content/cid/11',{
+         method: 'GET'
+         }).then(
+             res => res.json()).then(
+             receive => {
+             this.setState({allContent:receive},() => {
+                 console.log('mytext', this.state.allContent.data[0])
+             }); 
+             console.log(receive.data[0].title);      
+             this.editorInstance.setContent(receive.data[0].text)
+           }
+          )
+    
+    
+    }
   enterLoading = () => {
     this.setState({ loading: true });
   }
   enterIconLoading = () => {
     this.setState({ iconLoading: true });
   }
- 
+
   render () {
+  // console.log(this.state.allContent.length)
+   //const data=this.state.hhhh
+    const columns = [{
+      title: '比赛类型',
+      dataIndex: 'competeType',
+      key: 'competeType',
+      render: text => <a href=" ">{text}</a>,
+    }, {
+      title: '比赛地点',
+      dataIndex: 'competePlace',
+      key: 'competePlace',
+    }, {
+      title: '比赛时间',
+      dataIndex: 'competeTime',
+      key: 'competeTime',
+    },  {
+      title: '操作',
+      key: 'action',
+      render: (text, record) => (
+        <span>
+          <Button onClick={this.handleChangeContent}>修改</Button>
+          <Divider type="vertical" />
+          <Popconfirm title="请确定是否删除" onConfirm={confirm} onCancel={cancel} okText="是" cancelText="否">
+            <Button>删除</Button>
+      </Popconfirm>
+        </span>
+      ),
+    }];
    const {getFieldDecorator} = this.props.form
-    // const uploadButton = (
-    //   <div>
-    //     <Icon type={this.state.loading ? 'loading' : 'plus'} />
-    //     <div className="ant-upload-text">正文图片</div>
-    //   </div>
-    // )
-    // const imageUrl = this.state.imageUrl;
     return (
       <div>
           <div className={styles.input}>
@@ -254,7 +158,10 @@ class GameNews extends React.Component {
                 label='比赛类型'
                 key='form-content-competeType'
               >
-                {getFieldDecorator('competeType')(
+                {getFieldDecorator('competeType',{
+                rules: [{
+                    required:true
+                  }]})(
                  <Input placeholder="请输入比赛类型"  />
                 )}
          </FormItem>
@@ -263,7 +170,10 @@ class GameNews extends React.Component {
               
                 key='form-content-competePlace'
               >
-                {getFieldDecorator('competePlace')(
+                {getFieldDecorator('competePlace',{
+                rules: [{
+                    required:true
+                  }]})(
                 <Input placeholder="请输入比赛地点"  />
                 )}
          </FormItem><FormItem
@@ -271,7 +181,10 @@ class GameNews extends React.Component {
                 // {...formItemLayout}
                 key='form-content-competeTime'
               >
-                {getFieldDecorator('competeTime')(
+                {getFieldDecorator('competeTime',{
+                rules: [{
+                    required:true
+                  }]})(
                  <Input placeholder="请输入比赛时间"  />
                 )}
          </FormItem><FormItem
@@ -279,7 +192,10 @@ class GameNews extends React.Component {
                 // {...formItemLayout}
                 key='form-content-title'
               >
-                {getFieldDecorator('title')(
+                {getFieldDecorator('title',{
+                rules: [{
+                    required:true
+                  }]})(
                 <Input placeholder="请输入文章标题"  />
                 )}
          </FormItem>
@@ -299,7 +215,8 @@ class GameNews extends React.Component {
           </Button>
         </div>
         <div className={StyleSheet.table}>
-          <Table columns={columns} dataSource={data} />
+        
+          <Table columns={columns} dataSource={this.state.hhhh} />
         </div>
        
       </div>     

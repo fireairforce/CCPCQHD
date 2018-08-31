@@ -16,8 +16,9 @@ class NewsSecond extends Component{
              res => res.json()).then(
              receive => {
              this.setState({mytext:receive},() => {
-                 console.log('mytext', this.state.url)
-             });     
+                 console.log('mytext', this.state.mytext.data[4])
+             }); 
+             console.log(receive.data[4].title);      
            }
           )
      }

@@ -3,36 +3,7 @@ import {Button,Input,Divider,Popconfirm,Table,Modal,message,Form} from 'antd'
 import 'antd/dist/antd.css'
 
 const FormItem=Form.Item
-
-
-
-const data = [{
-  key: '1',
-  type: 'CCPC 秦皇岛站',
-  news: '东北大学秦皇岛分校',
-}, {
-  key: '2',
-  type: 'CCPC 秦皇岛站',
-  news: '东北大学秦皇岛分校',
-},{
-  key: '3',
-  type: 'CCPC 秦皇岛站',
-  news: '东北大学秦皇岛分校',
-},{
-  key: '4',
-  type: 'CCPC 秦皇岛站',
-  news: '东北大学秦皇岛分校',
-},{
-  key: '5',
-  type: 'CCPC 秦皇岛站',
-  news: '东北大学秦皇岛分校',
-},{
-  key: '6',
-  type: 'CCPC 秦皇岛站',
-  news: '东北大学秦皇岛分校',
-},];
 const confirm = () => {
-  data.shift()
   message.success('删除成功');
 }
 const cancel=()=> {
@@ -44,9 +15,23 @@ class Menu extends Component{
     super(props)
     this.state={
       visible: false ,
-      loading: false
+      loading: false,
+      allContent:''
     }
     this.handleSubmit=this.handleSubmit.bind(this)
+  }
+  componentDidMount(){
+    fetch('https://ccpc.elatis.cn/content/type/headerNavs',{
+      method:'GET'
+    }).then((res)=>{
+      return res.json()
+        }).then(recieve=>{
+          this.setState({
+            allContent:recieve.data
+          },
+          console.log(this.state.allContent)
+        )
+        })
   }
  handleSubmit(e){
   // e.preventDefalut()
@@ -54,7 +39,6 @@ class Menu extends Component{
    const ctx=this;
    this.props.form.validateFieldsAndScroll((err,values)=>{
      if(err){console.log(err)}else{
-   
       const body={
         ...values,
         ...ctx.state.competeType,
@@ -67,11 +51,11 @@ class Menu extends Component{
       body.title="null"
       body.previewImg="null"
         console.log(body)
-      fetch('https://ccpc.ela.moe/headerNavs',{
+      fetch('https://ccpc.elatis.cn/admin/write/headerNavs',{
         method:'POST',
         headers:{
           'Content-Type':'application/json',
-          'token':'123123'
+          'token':'IgyaO3US8Ju4rJgxiddE75z8pVW1cq7e'
         },
         body:JSON.stringify(body)
 
@@ -88,16 +72,14 @@ class Menu extends Component{
      }
    })
  }
-
- 
   render(){
     const showModal = () => {
       this.setState({
         visible: true,
-      });
-     
-    }
-    
+      });   
+     const abc=this.state.allContent
+     console.log(abc[0].cid)
+    } 
     const handleOk = (e) => {
       console.log(e);
       this.setState({
@@ -114,16 +96,16 @@ class Menu extends Component{
     }
     const columns = [{
       title: '比赛类型',
-      dataIndex: 'type',
-      key: 'type',
-      render: text => <a href="javascript(void0)">{text}</a>,
+      dataIndex: 'competeType',
+      Key: 'competeType',
+      render: text => <a href="javascript（void0）">{text}</a>,
     }, {
       title: '具体信息',
-      dataIndex: 'news',
-      key: 'news',
+      dataIndex: 'details',
+      Key: 'details',
     }, {
       title: '操作',
-      key: 'action',
+      Key: 'action',
       render: (text, record) => (
         <span>
           <Button type="primary" onClick={showModal}>修改</Button>
@@ -151,8 +133,7 @@ class Menu extends Component{
                 )}
          </FormItem>
          <FormItem
-                label='具体信息'
-              
+                label='具体信息'          
                 key='form-content-details'
               >
                 {getFieldDecorator('details',{
@@ -162,39 +143,24 @@ class Menu extends Component{
                 <Input placeholder="请输入具体信息"  />
                 )}
          </FormItem>
-         {/* <FormItem onSubmit={this.handleSubmit}>
-         <Button
-                  type='primary'
-                  htmlType='submit'
-                  className='form-button'
-                  loading={this.state.loading}
-                  disabled={this.state.submitted}
-                >
-                  {this.state.submitted ? '提交成功' : '点击提交'}
-                </Button>
-         </FormItem> */}
         </Form>
         <Button type="primary" loading={this.state.loading} onClick={this.handleSubmit}>
            提交
           </Button>
         </div>
         <div>
-        <Table columns={columns} dataSource={data} />
+        <Table columns={columns} dataSource={this.state.allContent} />
         </div>
-
-  <div>
-        
+  <div> 
         <Modal
           title="信息修改"
           cancelText='取消'
           okText='确定'
-         
           visible={this.state.visible}
           onOk={handleOk}
           onCancel={handleCancel}
         >
            <div>
-       
          <Form >
           <FormItem
                 label='比赛类型'
@@ -205,8 +171,7 @@ class Menu extends Component{
                 )}
          </FormItem>
          <FormItem
-                label='具体信息'
-              
+                label='具体信息'            
                 key='form-content-details1'
               >
                 {getFieldDecorator('details1')(
@@ -214,13 +179,9 @@ class Menu extends Component{
                 )}
          </FormItem>
         </Form>
-        
-       
         </div>
-       
         </Modal>
       </div>
-       
       </div>
     )
   }

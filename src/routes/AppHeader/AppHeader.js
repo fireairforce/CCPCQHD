@@ -11,7 +11,6 @@ const SubMenu = Menu.SubMenu
 const Search = Input.Search
 const history=createHistory();
 const MenuItemGroup = Menu.ItemGroup;
-// const bxw=this;
 class AppHeader extends Component{
   state = {
     current: 'mail',
