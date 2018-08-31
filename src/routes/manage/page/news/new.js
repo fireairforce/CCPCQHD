@@ -1,9 +1,5 @@
 import React from 'react'
-<<<<<<< HEAD
-import {Button,Input,Divider,Table,message,Popconfirm,Icon,Upload} from 'antd'
-=======
 import {Button,Input,Divider,Table,message,Popconfirm,Icon,Upload,Form} from 'antd'
->>>>>>> 85c73f279f9f0bfbcc0d5a229677455dde25d0e1
 import styles from './game.less'
 import BraftEditor from 'braft-editor'
 import 'braft-editor/dist/braft.css'
@@ -29,13 +25,8 @@ const columns = [{
   title: '文章标题',
   dataIndex: 'header',
   key: 'header',
-<<<<<<< HEAD
-  render: text => <a href="javascript(void0)">{text}</a>,
-}, {
-=======
   render: text => <a href=" ">{text}</a>,
 },   {
->>>>>>> 85c73f279f9f0bfbcc0d5a229677455dde25d0e1
   title: '操作',
   key: 'action',
   render: (text, record) => (

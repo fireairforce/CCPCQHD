@@ -1,9 +1,5 @@
 import React from 'react'
-<<<<<<< HEAD
-import {Button,Input,Divider,Table,message,Popconfirm,Form,Icon,Upload} from 'antd'
-=======
 import {Button,Input,Divider,Table,message,Popconfirm,Icon,Upload,Form} from 'antd'
->>>>>>> 85c73f279f9f0bfbcc0d5a229677455dde25d0e1
 import styles from './game.less'
 import UpLoadPicture from '../../UpLoadPicture'
 import BraftEditor from 'braft-editor'
@@ -38,26 +34,11 @@ const editorProps = {
   onChange: handleChange,
   onRawChange: handleRawChange,
 }
-<<<<<<< HEAD
-
-// const editor=(
-//   <div className={styles.input}>
-//         比赛类型：<Input placeholder="请输入比赛类型"  id='type'/>
-//         比赛地点：<Input placeholder="请输入比赛地点"  id='adress'/>
-//         比赛时间：<Input placeholder="请输入比赛时间"  id='time'/>
-//    </div>
-// )
-=======
->>>>>>> 85c73f279f9f0bfbcc0d5a229677455dde25d0e1
 const columns = [{
   title: '比赛类型',
   dataIndex: 'type',
   key: 'type',
-<<<<<<< HEAD
-  render: text => <a href="javascript(void0)">{text}</a>,
-=======
   render: text => <a href=" ">{text}</a>,
->>>>>>> 85c73f279f9f0bfbcc0d5a229677455dde25d0e1
 }, {
   title: '比赛地点',
   dataIndex: 'address',

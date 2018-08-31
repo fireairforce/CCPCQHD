@@ -37,9 +37,9 @@ class AppNews extends Component{
                         <div className={styles.news44410}>
                            <p className={styles.news}>{this.state.mytext.data ? this.state.mytext.data[0].title : 'null'}</p>
                         </div>
-                        <div className={styles.news4441}>
-                           <p>CHYNB</p>
-                        </div>
+                        <div className={styles.news4441} 
+                         dangerouslySetInnerHTML={{__html: this.state.mytext.data ? this.state.mytext.data[0].text : 'null'}}
+                        />
                     </div>
 
                     <div className={styles.news4440} onClick={()=>{history.push('./focus1')}}>
@@ -47,9 +47,9 @@ class AppNews extends Component{
                         <div className={styles.news44411}>
                             <p className={styles.news}>{this.state.mytext.data ? this.state.mytext.data[1].title : 'null'}</p>
                         </div>
-                        <div className={styles.news4441}>
-                            <p>CHYNB</p>
-                        </div>
+                        <div className={styles.news4441}  
+                        dangerouslySetInnerHTML={{__html: this.state.mytext.data ? this.state.mytext.data[1].text : 'null'}}
+                        />
                     </div>
 
                    <div className={styles.news4440} onClick={()=>{history.push('./focus2')}}>
@@ -57,19 +57,19 @@ class AppNews extends Component{
                         <div className={styles.news44412}>
                             <p className={styles.news}>{this.state.mytext.data ? this.state.mytext.data[2].title : 'null'}</p>
                         </div>
-                        <div className={styles.news4441}>
-                            <p>CHYNB</p>
-                        </div>
+                        <div className={styles.news4441}  
+                        dangerouslySetInnerHTML={{__html: this.state.mytext.data ? this.state.mytext.data[2].text : 'null'}}
+                        />
                     </div>
 
                     <div className={styles.news4440} onClick={()=>{history.push('./focus3')}}>
                         <img src={this.state.mytext.data ? this.state.mytext.data[3].previewImg : 'null'} alt='test4' style={{width:'300px',height:'225px'}}/>
                         <div className={styles.news44413}>
-                            <p className={styles.news}>{this.state.mytext.data ? this.state.mytext.data[2].title : 'null'}</p>
+                            <p className={styles.news}>{this.state.mytext.data ? this.state.mytext.data[3].title : 'null'}</p>
                         </div>
-                        <div className={styles.news4441}>
-                            <p>CHYNB</p>
-                        </div>
+                        <div className={styles.news4441}  
+                        dangerouslySetInnerHTML={{__html: this.state.mytext.data ? this.state.mytext.data[3].text : 'null'}}
+                        />
                     </div>
                  </div>
             </div>

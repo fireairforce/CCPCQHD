@@ -1,40 +1,15 @@
 import React,{Component} from 'react'
 import styles from './AppHeader.less'
 import { Menu, Dropdown, Input,Divider,Button } from 'antd'
+import createHistory from 'history/createHashHistory';
 /**
  * 
  * 
  * 两个bug
  * */
-
 const SubMenu = Menu.SubMenu
 const Search = Input.Search
-
-const menu = (
-    <Menu>
-      <Menu.Item>2017年国赛</Menu.Item>
-      <Menu.Item>2018年国赛</Menu.Item>
-      <Divider />
-      <SubMenu title="2017分站赛-秦皇岛站">
-        <Menu.Item>东秦第一</Menu.Item>
-        <Menu.Item>东秦第一</Menu.Item>
-      </SubMenu>
-      <SubMenu title="2017分站赛-哈尔滨站">
-        <Menu.Item>东秦第一</Menu.Item>
-        <Menu.Item>东秦第一</Menu.Item>
-      </SubMenu>
-      <SubMenu title="2017分站赛-杭州站">
-        <Menu.Item>东秦第一</Menu.Item>
-        <Menu.Item>东秦第一</Menu.Item>
-      </SubMenu>
-      <Divider />
-      <Menu.Item>2017年东北地区赛</Menu.Item>
-      <Menu.Item>2017年中南地区赛</Menu.Item>
-      <Divider />
-      <Menu.Item>2017年江苏省省赛</Menu.Item>
-      <Menu.Item>2017年黑龙江省省赛</Menu.Item>
-    </Menu>
-  )
+const history=createHistory();
 const MenuItemGroup = Menu.ItemGroup;
 // const bxw=this;
 class AppHeader extends Component{
@@ -48,13 +23,58 @@ class AppHeader extends Component{
       current: e.key,
     });
   }
+  constructor(){
+    super()
+    this.state={
+        mytext: '',    
+    }
+}
+getData(){  
+     fetch('https://ccpc.elatis.cn/content/type/headerNavs',{
+     method: 'GET'
+     }).then(
+         res => res.json()).then(
+         receive => {
+         this.setState({mytext:receive},() => {
+             console.log('mytext233', this.state.mytext)
+         });      
+       }
+      )
+ }
+ componentDidMount(){
+   this.getData();
+ }
     render(){
         return(
             <div className={styles.AppHeader}>
                 <ul className={styles.nav}>
-                 <li><img src="http://pdx2xd16q.bkt.clouddn.com/logo.png" alt='logo' className={styles.logo}/></li>
+                 <li onClick={()=>{history.push('./')}}><img src="http://pdx2xd16q.bkt.clouddn.com/logo.png" alt='logo' className={styles.logo} /></li>
                     <li>
-                      <Dropdown overlay={menu} >
+                      <Dropdown overlay=
+                      {<Menu>
+                       <Menu.Item>{this.state.mytext.data?this.state.mytext.data[0].competeType:"null"}</Menu.Item>
+                       <Menu.Item>{this.state.mytext.data?this.state.mytext.data[1].competeType:"null"}</Menu.Item>
+                       <Divider />
+                       <SubMenu title={this.state.mytext.data?this.state.mytext.data[2].competeType:"null"}>
+                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[2].details:"null"}</Menu.Item>
+                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[2].details:"null"}</Menu.Item>
+                       </SubMenu>
+                       <SubMenu title={this.state.mytext.data?this.state.mytext.data[3].competeType:"null"}>
+                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[3].details:"null"}</Menu.Item>
+                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[3].details:"null"}</Menu.Item>
+                       </SubMenu>
+                       <SubMenu title={this.state.mytext.data?this.state.mytext.data[4].competeType:"null"}>
+                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[4].details:"null"}</Menu.Item>
+                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[4].details:"null"}</Menu.Item>
+                       </SubMenu>
+                       <Divider />
+                       <Menu.Item>{this.state.mytext.data?this.state.mytext.data[5].competeType:"null"}</Menu.Item>
+                       <Menu.Item>{this.state.mytext.data?this.state.mytext.data[6].competeType:"null"}</Menu.Item>
+                       <Divider />
+                       <Menu.Item>{this.state.mytext.data?this.state.mytext.data[7].competeType:"null"}</Menu.Item>
+                       <Menu.Item>{this.state.mytext.data?this.state.mytext.data[8].competeType:"null"}</Menu.Item>
+                     </Menu>}
+                      >
                         <img src="http://pdx2xd16q.bkt.clouddn.com/menu.png" alt='f'/>
                       </Dropdown>
                     </li>
