@@ -11,7 +11,7 @@ const TabPane = Tabs.TabPane;
 function callback(key) {
   console.log(key);
 }
-const card=(
+const card=[(
     <Col span={8} >
     <Card title="" bordered={false} style={{ backgroundColor: '#ECECEC'}} > 
         <div style={{wdith:498,marginLeft:'-10px'}}  className={styles.float}>
@@ -29,7 +29,7 @@ const card=(
             </div>
      </Card>
 </Col>
-)
+)]
 class AppCompete extends Component{
     render(){
 

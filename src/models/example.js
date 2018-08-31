@@ -20,6 +20,12 @@ export default {
     save(state, action) {
       return { ...state, ...action.payload };
     },
+    allMeaaage(state,action){
+      return{
+       ...state,
+      allMeaaage:action.payload
+      }
+    }
   },
 
 };
