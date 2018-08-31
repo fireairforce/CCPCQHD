@@ -1,9 +1,9 @@
 import React from 'react'
-import {Button,Input,Divider,Table,message,Popconfirm,Icon,Upload,Form} from 'antd'
+import {Button,Input,Divider,Table,message,Popconfirm,Form} from 'antd'
 import styles from './game.less'
 import BraftEditor from 'braft-editor'
 import 'braft-editor/dist/braft.css'
-import Pictures from '../slider/index'
+import UpLoadPicture from '../../UpLoadPicture'
 
 
 const FormItem=Form.Item
@@ -23,8 +23,8 @@ const editorProps = {
 }
 const columns = [{
   title: '文章标题',
-  dataIndex: 'header',
-  key: 'header',
+  dataIndex: 'title',
+  key: 'title',
   render: text => <a href=" ">{text}</a>,
 },   {
   title: '操作',
@@ -39,18 +39,6 @@ const columns = [{
     </span>
   ),
 }];
-
-const data = [{
-  key: '1',
-  header:'吴东第一'
- 
-}, {
-  key: '2',
-  header:'吴东第一'
-}, {
-  key: '3',
-  header:'吴东第一'
-}];
 const confirm = () => {
   
   message.success('删除成功');
@@ -59,12 +47,8 @@ const cancel=()=> {
   message.error('取消成功'); 
 }
 const onChange=()=>{
-  console.log(editorProps.contentId)
-  editorProps.contentId=2
-  console.log(editorProps.contentId)
-  console.log(editorProps.initialContent)
- editorProps.initialContent="我是傻逼"
- console.log(editorProps.initialContent)
+//  
+console.log(1)
 
 }
 @Form.create()
@@ -74,37 +58,29 @@ class News extends React.Component {
     this.state = {
       loading: false,
       iconLoading: false,
-     
+      allContent:''
     }
     this.handleSubmit=this.handleSubmit.bind(this)
   }
-  // componentDidMount(){
-  // //   fetch('https://ccpc.elatis.cn/writecontent/content.competePlace',{
-  // //     method:'POST'
-  // //   }) 
-  // // .then((res)=>{
-  // //   return res.text() // res.text()是一个Promise对象
-  // // })
-  // // .then((res)=>{
-  // //   console.log(res)
-  // //   // res是最终的结果
-  // // })
-  // fetch('https://ccpc.elatis.cn/writecontent/account',
-  //  {
-  //   method: 'POST',
-  //   mode: "no-cors",
-  //   // headers: {
-  //   //   'Content-Type': 'application/json'
-  //   // },
-  //   // body: JSON.stringify(body)
-  // })
-  // .then((res)=>{
-  //   return res.text() // 返回一个Promise，可以解析成JSON
-  // })
-  // .then((res)=>{
-  //   console.log(res) // 获取JSON数据
-  // })
-  // }
+  componentDidMount(){
+  fetch('https://ccpc.elatis.cn/content/type/focusNews',
+   {
+    method: 'GET',
+  })
+  .then((res)=>{
+    return res.json() // 返回一个Promise，可以解析成JSON
+  })
+  .then(recieve=>{
+    this.setState({
+      allContent:recieve.data
+    },()=>{
+      console.log(this.state.allContent)
+    })
+  }
+    
+)
+  }
+
  handleSubmit(e){
     e.preventDefault()
     const ctx=this;
@@ -117,14 +93,15 @@ class News extends React.Component {
         }
       body.text=this.editorInstance.getContent()
       body.status='public'
-      body.previewImg='https://cdn.elatis.cn/archives/135/59665229_p0.png'
+      body.previewImg="http://pdy48vy9a.bkt.clouddn.com/13933.jpg"
+      
         console.log(body)
        //处理发送的数据
-        fetch('http://192.168.1.66:8888/admin/write/focusNews', {
+        fetch('https://ccpc.elatis.cn/admin/write/focusNews', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'token':'123123'
+            'token':'IgyaO3US8Ju4rJgxiddE75z8pVW1cq7e'
           },
          
          body: JSON.stringify(body)
@@ -153,12 +130,12 @@ class News extends React.Component {
  
   render () {
    const {getFieldDecorator} = this.props.form
-    const uploadButton = (
-      <div>
-        <Icon type={this.state.loading ? 'loading' : 'plus'} />
-        <div className="ant-upload-text">正文图片</div>
-      </div>
-    )
+    // const uploadButton = (
+    //   <div>
+    //     <Icon type={this.state.loading ? 'loading' : 'plus'} />
+    //     <div className="ant-upload-text">正文图片</div>
+    //   </div>
+    // )
     return (
       <div>
           <div className={styles.input}>
@@ -168,23 +145,28 @@ class News extends React.Component {
                 // {...formItemLayout}
                 key='form-content-title'
               >
-                {getFieldDecorator('title')(
+                {getFieldDecorator('title',{
+                rules: [{
+                    required:true
+                  }]})(
                 <Input placeholder="请输入文章标题"  />
                 )}
          </FormItem>
         </Form>
       </div>
           <div className="clearfix">
-             <Pictures />
+             <UpLoadPicture />
+           
+          
           </div>
-          <BraftEditor ref={instance => this.editorInstance = instance}{...editorProps}/>  }
+          <BraftEditor ref={instance => this.editorInstance = instance}{...editorProps}/>  
         <div className={styles.submit}>
           <Button type="primary" loading={this.state.loading} onClick={this.handleSubmit}>
            提交
           </Button>
         </div>
         <div className={StyleSheet.table}>
-          <Table columns={columns} dataSource={data} />
+          <Table columns={columns} dataSource={this.state.allContent} />
         </div>
        
       </div>     
