@@ -36,7 +36,11 @@ const menu = (
     </Menu>
   )
 const MenuItemGroup = Menu.ItemGroup;
+<<<<<<< HEAD
 
+=======
+// const bxw=this;
+>>>>>>> 43cffbdd8b0484ba8c5c30fffecf3f5dcee736fd
 class AppHeader extends Component{
   state = {
     current: 'mail',
