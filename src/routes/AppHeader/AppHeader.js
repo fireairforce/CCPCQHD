@@ -51,20 +51,26 @@ getData(){
                     <li>
                       <Dropdown overlay=
                       {<Menu>
-                       <Menu.Item>{this.state.mytext.data?this.state.mytext.data[0].competeType:"null"}</Menu.Item>
-                       <Menu.Item>{this.state.mytext.data?this.state.mytext.data[1].competeType:"null"}</Menu.Item>
+                        <SubMenu title={this.state.mytext.data?this.state.mytext.data[0].competeType:""}>
+                            <Menu.Item>{this.state.mytext.data?this.state.mytext.data[0].details:""}</Menu.Item>
+                            <Menu.Item>{this.state.mytext.data?this.state.mytext.data[0].details:""}</Menu.Item>
+                       </SubMenu>
+                       <SubMenu title={this.state.mytext.data?this.state.mytext.data[1].competeType:""}>
+                            <Menu.Item>{this.state.mytext.data?this.state.mytext.data[1].details:""}</Menu.Item>
+                            <Menu.Item>{this.state.mytext.data?this.state.mytext.data[1].details:""}</Menu.Item>
+                       </SubMenu>
                        <Divider />
-                       <SubMenu title={this.state.mytext.data?this.state.mytext.data[2].competeType:"null"}>
-                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[2].details:"null"}</Menu.Item>
-                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[2].details:"null"}</Menu.Item>
+                       <SubMenu title={this.state.mytext.data?this.state.mytext.data[2].competeType:""}>
+                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[2].details:""}</Menu.Item>
+                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[2].details:""}</Menu.Item>
                        </SubMenu>
-                       <SubMenu title={this.state.mytext.data?this.state.mytext.data[3].competeType:"null"}>
-                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[3].details:"null"}</Menu.Item>
-                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[3].details:"null"}</Menu.Item>
+                       <SubMenu title={this.state.mytext.data?this.state.mytext.data[3].competeType:""}>
+                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[3].details:""}</Menu.Item>
+                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[3].details:""}</Menu.Item>
                        </SubMenu>
-                       <SubMenu title={this.state.mytext.data?this.state.mytext.data[4].competeType:"null"}>
-                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[4].details:"null"}</Menu.Item>
-                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[4].details:"null"}</Menu.Item>
+                       <SubMenu title={this.state.mytext.data?this.state.mytext.data[4].competeType:""}>
+                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[4].details:""}</Menu.Item>
+                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[4].details:""}</Menu.Item>
                        </SubMenu>
                        <Divider />
                        <Menu.Item>{this.state.mytext.data?this.state.mytext.data[5].competeType:"null"}</Menu.Item>

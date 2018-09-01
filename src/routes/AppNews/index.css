@@ -57,8 +57,10 @@
     width: 300px;
     height: 140px;
     background-color: #fff;
-    /* position: relative; */
     position: absolute;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 20px;
 }
 .news{
     position: absolute;
@@ -69,14 +71,6 @@
     left: 10px;
     top: 10px;
  
-}
-.news4441 p{
-    height: 120px;
-    font-size: 16px;
-    padding: 10px;
-    overflow:hidden;
-    top: 10px;
-    text-indent: 2em;
 }
 .news4440:hover{
     transition: 0.5s;
