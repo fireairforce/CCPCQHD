@@ -6,6 +6,8 @@ import Menu from './page/menu/menu'
 import Slider from './page/slider/index'
 import GameNews from './page/news/game'
 import News from './page/news/new'
+import competeModify from './page/modify/competeModify'
+import focusNewsModify from './page/modify/focusNewsModify'
 import 'antd/dist/antd.css'
 
 
@@ -19,9 +21,9 @@ export default class Contents extends React.Component {
         <Route path="/manage/slider" component={Slider} />
         <Route path='/manage/game' component={GameNews} />
         <Route path='/manage/news' component={News} /> 
-        {/* <Route path="/follow" component={follow} />
-        <Route path="/tools" component={Tools} />
-       */}
+        <Route path="/manage/competemodify" component={competeModify} />
+        <Route path="/manage/focusnewsmodify" component={focusNewsModify} />
+      
       </Content>
     );
   }

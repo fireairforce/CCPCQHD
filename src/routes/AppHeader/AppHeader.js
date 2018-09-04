@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import styles from './AppHeader.less'
-import { Menu, Dropdown, Input,Divider,Button,message } from 'antd'
+import { Menu, Dropdown, Input,Divider,Button } from 'antd'
 /**
  * 
  * 
@@ -36,7 +36,7 @@ const menu = (
     </Menu>
   )
 const MenuItemGroup = Menu.ItemGroup;
-const bxw=this;
+
 class AppHeader extends Component{
   state = {
     current: 'mail',
@@ -53,7 +53,7 @@ class AppHeader extends Component{
             <div className={styles.AppHeader}>
                 <ul className={styles.nav}>
                  <li><img src="http://pdx2xd16q.bkt.clouddn.com/logo.png" alt='logo' className={styles.logo}/></li>
-                    <li>
+                    <li className={styles.menus}>
                       <Dropdown overlay={menu} >
                         <img src="http://pdx2xd16q.bkt.clouddn.com/menu.png" alt='f'/>
                       </Dropdown>
@@ -95,7 +95,7 @@ class AppHeader extends Component{
         </SubMenu>
         </Menu>
                       </li>
-                    <li><img src="http://pdx2xd16q.bkt.clouddn.com/resigiter.png" alt='resigter' className={styles.photo}/> </li>
+                    <li><img src="http://pdx2xd16q.bkt.clouddn.com/resigiter.png" alt='resigter' className={styles.photos}/> </li>
                     <li>注册</li>
                     <li><img src="http://pdx2xd16q.bkt.clouddn.com/help.png" alt='help' className={styles.photo}/> </li>
                     <li>帮助</li>

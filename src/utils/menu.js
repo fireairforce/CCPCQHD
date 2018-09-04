@@ -4,27 +4,26 @@ export const allMenu = [
       url: 'manage/index',
       icon: 'home',
     }, {
-      name: '图片修改',
+      name: '媒体库',
       url: 'manage/slider',
       icon: 'bars',
       
     }, {
       name:'发布信息',
       url:'manage/publish',
-      icons:'search',
+      icon:'plus',
       children:[
         {name:'比赛发布',url:'manage/game'},
         {name:'新闻发布',url:'manage/news'}
       ]
     }
-    
-     
-    //, {
-    //   name: '搜索模块',
-    //   url: 'search',
-    //   icon: 'search',
-    //   children: [
-    //     { name: '搜索引擎', url: 'searchEngine' },
-    //   ],
-    //  }
+    , {
+      name: '信息修改',
+      url: 'manage/modify',
+      icon: 'delete',
+      children: [
+        { name: '比赛修改', url: 'manage/competemodify' },
+        {name:'信息修改',url:'manage/focusnewsmodify'}
+      ],
+     }
     ]

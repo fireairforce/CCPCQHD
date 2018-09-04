@@ -17,7 +17,6 @@ class NewsSecond extends Component{
              receive => {
              this.setState({mytext:receive},() => {
                  console.log('mytext', this.state.mytext.data[4])
-                 // m=this.state.mytext.data[0];
              }); 
              console.log(receive.data[4].title);      
            }

@@ -1,19 +1,28 @@
 import React from 'react'
-import {Button,Input,Table,message,Form,Modal} from 'antd'
-import styles from './game.less'
+import {Button,Input,Divider,Table,message,Popconfirm,Form} from 'antd'
+import styles from '../news/game.less'
 import BraftEditor from 'braft-editor'
 import 'braft-editor/dist/braft.css'
 import UpLoadPicture from '../../UpLoadPicture'
 
-const FormItem=Form.Item
 const EditableContext = React.createContext();
+const FormItem=Form.Item
+const handleChange = (content) => {
+  console.log(content)
+}
+
+const handleRawChange = (rawContent) => {
+  console.log(rawContent)
+}
 const editorProps = {
   height: 500,
   contentFormat: 'html',
   initialContent: '<p>请输入内容</p>',
+  onChange: handleChange,
+  onRawChange: handleRawChange,
 }
 @Form.create()
-class News extends React.Component {
+class focusNewsModify extends React.Component {
   constructor(props){
     super(props)
     this.state = {
@@ -21,9 +30,12 @@ class News extends React.Component {
       iconLoading: false,
       allContent:'',
       changeContent:'',
-      visible:false
+      status:false,
+      title:'',
+      url:''
     }
-    this.handleSubmit=this.handleSubmit.bind(this)  
+    this.handleChangeContent=this.handleChangeContent.bind(this)
+    this.handleSubmit=this.handleSubmit.bind(this)
   }
   reFresh=(url)=>{fetch(url,
 {
@@ -51,26 +63,33 @@ class News extends React.Component {
           ...values,
          ...ctx.state.title,
         }
+        body.cid=this.state.changeContent.cid
+        console.log(body)
       body.text=this.editorInstance.getContent()
       body.status='public'
-      body.previewImg="http://pdy48vy9a.bkt.clouddn.com/13933.jpg"
+      body.previewImg="http://pdx2xd16q.bkt.clouddn.com/zjlg.jpg"
         console.log(body)
+        const content={
+          cid:body.cid,
+          title:body.title,
+          text:body.text,
+          previewImg:body.previewImg
+        }
        //处理发送的数据
-        fetch('https://ccpc.elatis.cn/admin/write/focusNews', {
+        fetch('https://ccpc.elatis.cn/admin/update', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'token':'IgyaO3US8Ju4rJgxiddE75z8pVW1cq7e'
           },
          
-         body: JSON.stringify(body)
+         body: JSON.stringify(content)
         }).then((res) => {
           return res.json()
-  
         }).then((json) => {
           console.log('json',json)
           if (json.code === 0) {
-            message.success('提交成功')
+            message.success('修改成功')
             this.reFresh('https://ccpc.elatis.cn/content/type/focusNews')
           }
         }).catch((e) => {
@@ -78,24 +97,9 @@ class News extends React.Component {
         })
     }
   })
-  }
-  see(form,cid){
-    const body={
-      ...form,
-      ...cid
-    }
-    body.cid=cid
-    const url='https://ccpc.elatis.cn/content/cid/'+body.cid
-    fetch(url,{
-      method:'GET'
-    }).then((res)=>{
-      return res.json()
-    }).then(recieve=>{
-        this.setState({
-         checkContent:recieve.data[0].text,
-         visible:true
-        })
-    })
+  this.setState({
+    status:false
+  })
   }
   confirm=(form, cid)=> {
     const body={
@@ -129,18 +133,44 @@ class News extends React.Component {
     console.log(e)
   })
   }
-  handleOk = () => {
-    this.setState({
-      visible: false,
-    });
+  cancel=()=>{
+   message.error('取消成功')
+  }
+  enterLoading = () => {
+    this.setState({ loading: true });
+  }
+  enterIconLoading = () => {
+    this.setState({ iconLoading: true });
+  }
+ handleChangeContent=(form,cid)=>{
+   const body={
+    
+     ...form,
+     ...cid
+   }
+  body.cid=cid
+   console.log(body)
+   const url='https://ccpc.elatis.cn/content/cid/'+body.cid
+   fetch(url,{
+     method:'GET'
+   }).then((res)=>{
+     return res.json()
+   }).then(recieve=>{
+      this.setState({
+        changeContent:recieve.data[0],
+        title:recieve.data[0].title,
+        status:true,
+        url:recieve.data[0].previewImg
+      },()=>{
+        console.log(this.state.title)
+        console.log(this.state.changeContent.text)
+        this.editorInstance.setContent(this.state.changeContent.text)
+      })
+     
+   })
+   
   }
 
-  handleCancel = () => {
-    this.setState({
-      visible: false,
-    });
-  }
- 
   render () {
    const {getFieldDecorator} = this.props.form
    const columns = [{
@@ -153,29 +183,27 @@ class News extends React.Component {
     key: 'action',
     render: (text, record) => (
       <span>
-    <EditableContext.Consumer>
-                    {form => (
-                      <Button onClick={()=>this.see(form,record.cid)}>查看</Button>
-                    )}
-        </EditableContext.Consumer>
+        {/* <Button onClick={this.handleChangeContent}>修改</Button> */}
+        <EditableContext.Consumer>
+              {form => (
+                <Button onClick={()=>{this.handleChangeContent(form,record.cid)}}>修改</Button>
+              )}
+            </EditableContext.Consumer>
+        <Divider type="vertical" />
+        <EditableContext.Consumer>
+              {form => (
+                <Popconfirm title="请确定是否删除" onConfirm={()=>{this.confirm(form,record.cid)}} onCancel={this.cancel} okText="是" cancelText="否">
+                  <Button>删除</Button>
+                </Popconfirm>
+              )}
+            </EditableContext.Consumer>
       </span>
     ),
   }];
+  //const yc=this.state.status===false?{styles.yc1}
     return (
       <div>
-         <Modal
-          title="文章内容"
-          visible={this.state.visible}
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
-          cancelText='退出'
-          okText='确定'
-          width='1000px'
-        >
-        
-         <div  dangerouslySetInnerHTML={{__html: this.state.checkContent}}/>
-        
-        </Modal>
+        <div className={this.state.status===false?styles.yc1:styles.yc2}>
           <div className={styles.input}>
          <Form >
          <FormItem
@@ -183,24 +211,27 @@ class News extends React.Component {
                 // {...formItemLayout}
                 key='form-content-title'
               >
-                {getFieldDecorator('title',{
-                rules: [{
-                    required:true
-                  }]})(
-                <Input placeholder="请输入文章标题"  />
+                {getFieldDecorator('title', {
+                    initialValue: this.state.title
+                  })(
+                <Input   />
                 )}
          </FormItem>
         </Form>
-      </div>
+        </div>
           <div className="clearfix">
-             <UpLoadPicture />
-
+             {/* <UpLoadPicture /> */}
+           <div>
+             <img src={this.state.url} alt='' className={styles.changeimg}/>
+           </div>
+          
           </div>
           <BraftEditor ref={instance => this.editorInstance = instance}{...editorProps}/>  
         <div className={styles.submit}>
           <Button type="primary" loading={this.state.loading} onClick={this.handleSubmit}>
-           提交
+           保存
           </Button>
+        </div>
         </div>
         <div className={StyleSheet.table}>
           <Table columns={columns} dataSource={this.state.allContent} />
@@ -211,4 +242,4 @@ class News extends React.Component {
   }
 }
 
-export default News
+export default focusNewsModify
