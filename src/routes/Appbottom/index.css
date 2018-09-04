@@ -1,4 +1,41 @@
 
+@media only screen and (max-width:500px){
+   .copyright{
+       width: 400px;
+       height: 550px;
+       background-color: #003b4d;
+       position: absolute;
+   }
+   .copyright_content a {
+    margin-right:80px;
+    text-decoration: none;
+    color: #fff;  
+    font-size: 18px;  
+   }
+   .copyright_content li {
+       position: relative;
+    list-style-type: none;
+    width: 260px;
+    left: 50px;
+    font-family: "微软雅黑";
+}
+.copyright_content li ul {
+    background-color: #c7d8df;
+}
+.copyright_content li ul li a {
+    font-size: 14px;
+    color: #003b4d;
+}
+   
+.Oracle img{
+       display: none;
+   }
+.Images{
+    position: relative;
+    left: 50px;
+}   
+}
+@media only screen and (min-width:500px){
 .copyright {
     width: 1400px;
     height: 341px;
@@ -59,4 +96,5 @@
     position: relative;
     top:170px;
     left:200px;
+}
 }

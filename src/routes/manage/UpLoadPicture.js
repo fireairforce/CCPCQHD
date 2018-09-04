@@ -49,6 +49,7 @@ class UpLoadPicture extends Component {
     console.log(fileList)
     })
   }
+
   handleCancel = () => this.setState({previewVisible: false})
   handlePreview = (file) => {
     this.setState({
@@ -120,10 +121,16 @@ class UpLoadPicture extends Component {
       onPreview: this.handlePreview,
       onChange: this.handleChange
     }
+    const uploadButton = (
+      <div>
+        <Icon type={this.state.loading ? 'loading' : 'plus'} />
+        <div className="ant-upload-text">正文图片</div>
+      </div>
+    )
     return (
       <div>
         <Upload {...uploadProps}>
-          <div>
+          {/* <div>
             <Icon type='plus' />
             <div className='ant-upload-text'>图片上传</div>
           </div>

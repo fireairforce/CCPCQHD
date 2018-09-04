@@ -4,7 +4,30 @@ import styles from './index.less'
  import {Carousel} from 'react-bootstrap'
 
 class AppSlider extends Component{
+  constructor(){
+    super()
+    this.state={
+        mytext: '',
+    }
+}
+getData(){  
+     fetch('https://ccpc.elatis.cn/img/groupid/1',{
+     method: 'GET'
+     }).then(
+         res => res.json()).then(
+         receive => {
+         this.setState({mytext:receive},() => {
+             //console.log('mytextimg', this.state.mytext)
+         });    
+       }
+      )
+ }
+ componentDidMount(){
+   this.getData();
+ }
+
   render(){
+  //  console.log(this.state.mytext);
     return(
    <div className={styles.sliders}>
      <Carousel>

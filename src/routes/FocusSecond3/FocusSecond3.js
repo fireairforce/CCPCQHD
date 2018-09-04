@@ -8,7 +8,7 @@ export default class FocusSecondThree extends Component{
        }
    }
    getData(){  
-        fetch('http://192.168.1.66:8888/content/cid/1',{
+        fetch('https://ccpc.elatis.cn/content/type/focusNews',{
         method: 'GET'
         }).then(
             res => res.json()).then(
@@ -27,7 +27,7 @@ export default class FocusSecondThree extends Component{
 
     render(){
         //console.log(this.state.mytext.data ? this.state.mytext.data[0].title : 'null');
-        console.log(this.state.mytext.data ? this.state.mytext.data[3].previewImg : 'null');
+       // console.log(this.state.mytext.data ? this.state.mytext.data[3].previewImg : 'null');
        return(
            <div className={styles.FocusContainer}>
                 <div className={styles.FocusHeader}>

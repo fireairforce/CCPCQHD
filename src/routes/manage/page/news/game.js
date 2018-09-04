@@ -1,17 +1,39 @@
 import React from 'react'
+<<<<<<< HEAD
 import {Button,Input,Table,message,Form,Modal} from 'antd'
+=======
+import {Button,Input,Divider,Table,message,Popconfirm,Form} from 'antd'
+>>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
 import styles from './game.less'
 import UpLoadPicture from '../../UpLoadPicture'
 import BraftEditor from 'braft-editor'
 import 'braft-editor/dist/braft.css'
 
 const FormItem=Form.Item
+<<<<<<< HEAD
 const EditableContext = React.createContext();
+=======
+const handleChange = (content) => {
+  console.log(content)
+}
+const handleRawChange = (rawContent) => {
+  console.log(rawContent)
+}
+>>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
 const editorProps = {
   height: 500,
   contentFormat: 'html',
   initialContent: '<p>请输入内容</p>',
 }
+<<<<<<< HEAD
+=======
+const confirm = () => { 
+  message.success('删除成功');
+}
+const cancel=()=> {
+  message.error('取消成功'); 
+}
+>>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
 @Form.create()
 class GameNews extends React.Component {
   constructor(props){
@@ -20,6 +42,7 @@ class GameNews extends React.Component {
       loading: false,
       iconLoading: false,
       allContent:'',
+<<<<<<< HEAD
       hhhh:'' ,
       checkContent:'',
       visible:false
@@ -42,6 +65,30 @@ class GameNews extends React.Component {
        )}    
   componentDidMount(){
     this.reFresh()    
+=======
+      hhhh:''
+     
+    }
+    this.handleSubmit=this.handleSubmit.bind(this)
+    this.handleChangeContent=this.handleChangeContent.bind(this)
+    }
+  componentDidMount(){
+    fetch('https://ccpc.elatis.cn/content/type/competeNews',{
+         method: 'GET'
+         }).then(
+             res => res.json()
+            ).then(
+             receive => {
+             this.setState({
+               allContent:receive,
+               hhhh:receive.data
+              },() => {
+               console.log('a',this.state.hhhh)
+             }); 
+           }
+          )
+          
+>>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
   }
  handleSubmit(e){
     e.preventDefault()
@@ -84,6 +131,7 @@ class GameNews extends React.Component {
     }
   })
   }
+<<<<<<< HEAD
   see(form,cid){
     const body={
       ...form,
@@ -106,6 +154,27 @@ class GameNews extends React.Component {
     this.setState({
       visible: false,
     });
+=======
+  handleChangeContent=()=>{
+    // this.editorInstance.setContent(receive.data[4].text)
+    fetch('https://ccpc.elatis.cn/content/cid/11',{
+         method: 'GET'
+         }).then(
+             res => res.json()).then(
+             receive => {
+             this.setState({allContent:receive},() => {
+                 console.log('mytext', this.state.allContent.data[0])
+             }); 
+             console.log(receive.data[0].title);      
+             this.editorInstance.setContent(receive.data[0].text)
+           }
+          )
+    
+    
+    }
+  enterLoading = () => {
+    this.setState({ loading: true });
+>>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
   }
 
   handleCancel = () => {
@@ -113,7 +182,14 @@ class GameNews extends React.Component {
       visible: false,
     });
   }
+<<<<<<< HEAD
   render () {
+=======
+
+  render () {
+  // console.log(this.state.allContent.length)
+   //const data=this.state.hhhh
+>>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
     const columns = [{
       title: '比赛类型',
       dataIndex: 'competeType',
@@ -132,12 +208,20 @@ class GameNews extends React.Component {
       key: 'action',
       render: (text, record) => (
         <span>
+<<<<<<< HEAD
        <EditableContext.Consumer>
                     {form => (
                       <Button onClick={()=>this.see(form,record.cid)}>查看</Button>
                     )}
         </EditableContext.Consumer>
          
+=======
+          <Button onClick={this.handleChangeContent}>修改</Button>
+          <Divider type="vertical" />
+          <Popconfirm title="请确定是否删除" onConfirm={confirm} onCancel={cancel} okText="是" cancelText="否">
+            <Button>删除</Button>
+      </Popconfirm>
+>>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
         </span>
       ),
     }];

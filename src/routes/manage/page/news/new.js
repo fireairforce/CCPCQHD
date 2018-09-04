@@ -1,9 +1,17 @@
 import React from 'react'
+<<<<<<< HEAD
 import {Button,Input,Table,message,Form,Modal} from 'antd'
+=======
+import {Button,Input,Divider,Table,message,Popconfirm,Form} from 'antd'
+>>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
 import styles from './game.less'
 import BraftEditor from 'braft-editor'
 import 'braft-editor/dist/braft.css'
 import UpLoadPicture from '../../UpLoadPicture'
+<<<<<<< HEAD
+=======
+
+>>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
 
 const FormItem=Form.Item
 const EditableContext = React.createContext();
@@ -11,6 +19,43 @@ const editorProps = {
   height: 500,
   contentFormat: 'html',
   initialContent: '<p>请输入内容</p>',
+<<<<<<< HEAD
+=======
+  onChange: handleChange,
+  onRawChange: handleRawChange,
+}
+const columns = [{
+  title: '文章标题',
+  dataIndex: 'title',
+  key: 'title',
+  dataIndex: 'header',
+  key: 'header',
+  render: text => <a href="javascript(void0)">{text}</a>,
+},{ 
+  title: '操作',
+  key: 'action',
+  render: (text, record) => (
+    <span>
+      <Button onClick={onChange}>修改</Button>
+      <Divider type="vertical" />
+      <Popconfirm title="请确定是否删除" onConfirm={confirm} onCancel={cancel} okText="是" cancelText="否">
+        <Button>删除</Button>
+  </Popconfirm>
+    </span>
+  ),
+}];
+const confirm = () => {
+  
+  message.success('删除成功');
+}
+const cancel=()=> {
+  message.error('取消成功'); 
+}
+const onChange=()=>{
+//  
+console.log(1)
+
+>>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
 }
 @Form.create()
 class News extends React.Component {
@@ -19,9 +64,13 @@ class News extends React.Component {
     this.state = {
       loading: false,
       iconLoading: false,
+<<<<<<< HEAD
       allContent:'',
       changeContent:'',
       visible:false
+=======
+      allContent:''
+>>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
     }
     this.handleSubmit=this.handleSubmit.bind(this)  
   }
@@ -42,6 +91,28 @@ class News extends React.Component {
   componentDidMount(){
   this.reFresh('https://ccpc.elatis.cn/content/type/focusNews')
   }
+<<<<<<< HEAD
+=======
+  componentDidMount(){
+  fetch('https://ccpc.elatis.cn/content/type/focusNews',
+   {
+    method: 'GET',
+  })
+  .then((res)=>{
+    return res.json() // 返回一个Promise，可以解析成JSON
+  })
+  .then(recieve=>{
+    this.setState({
+      allContent:recieve.data
+    },()=>{
+      console.log(this.state.allContent)
+    })
+  }
+    
+)
+  }
+
+>>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
  handleSubmit(e){
     e.preventDefault()
     const ctx=this;
@@ -54,6 +125,10 @@ class News extends React.Component {
       body.text=this.editorInstance.getContent()
       body.status='public'
       body.previewImg="http://pdy48vy9a.bkt.clouddn.com/13933.jpg"
+<<<<<<< HEAD
+=======
+      
+>>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
         console.log(body)
        //处理发送的数据
         fetch('https://ccpc.elatis.cn/admin/write/focusNews', {
@@ -143,6 +218,7 @@ class News extends React.Component {
  
   render () {
    const {getFieldDecorator} = this.props.form
+<<<<<<< HEAD
    const columns = [{
     title: '文章标题',
     dataIndex: 'title',
@@ -161,6 +237,14 @@ class News extends React.Component {
       </span>
     ),
   }];
+=======
+    // const uploadButton = (
+    //   <div>
+    //     <Icon type={this.state.loading ? 'loading' : 'plus'} />
+    //     <div className="ant-upload-text">正文图片</div>
+    //   </div>
+    // )
+>>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
     return (
       <div>
          <Modal
@@ -194,7 +278,12 @@ class News extends React.Component {
       </div>
           <div className="clearfix">
              <UpLoadPicture />
+<<<<<<< HEAD
 
+=======
+           
+          
+>>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
           </div>
           <BraftEditor ref={instance => this.editorInstance = instance}{...editorProps}/>  
         <div className={styles.submit}>
