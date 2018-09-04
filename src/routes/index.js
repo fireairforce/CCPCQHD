@@ -36,7 +36,6 @@ class App extends Component{
     render(){
        return(
         <div className={styles.Main1}>
-            {/* <AppSlides /> */}
             <AppHeader />
             <AppSLider />
             <AppMessage />

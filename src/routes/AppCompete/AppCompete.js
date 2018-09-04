@@ -22,7 +22,7 @@ class AppCompete extends Component{
              res => res.json()).then(
              receive => {
              this.setState({mytext:receive},() => {
-                 console.log('mytext', this.state.mytext)
+               //  console.log('mytext', this.state.mytext)
              });    
            }
           )

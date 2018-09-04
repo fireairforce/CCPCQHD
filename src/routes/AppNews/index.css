@@ -1,3 +1,88 @@
+@media only screen and (max-width:500px){
+    .news111{
+        width: 400px;
+        background-color: #DEE0EE;
+        position: relative;
+        margin: 0 auto;
+        height: 2200px;
+    }
+    .news222{
+        width: 400px;
+        position: absolute;
+        margin-top: 70px;
+    }
+    .news333{
+        font-size: 28px;
+        color: rgba(16, 16, 16, 1);
+        text-align: center;
+    }
+    .news444{
+        width: 100%;
+        height: 400px;
+        position: absolute;
+    }
+    .news4440{
+       float:left;
+       padding-left: 40px;
+       padding-top: 180px;
+       
+    }
+    .news44410{
+        width: 100%;
+        height: 100px;
+        background-color: #01758f;
+        position: relative;
+    }
+    .news44411{
+        width: 100%;
+        height: 100px;
+        background-color: #3b9140;
+        position: relative;
+    }
+    
+    .news44412{
+        width: 100%;
+        height: 100px;
+        background-color: #013c4e;
+        position: relative;
+    }
+    .news44413{
+        width: 100%;
+        height: 100px;
+        background-color: #942746;
+        position: relative;
+    }
+    .news4441{
+        width: 300px;
+        height: 140px;
+        background-color: #fff;
+        position: absolute;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 20px;
+    }
+    .news{
+        position: absolute;
+        display: block;
+        width: 50%;
+        font-size: 20px;
+        color:#fff;
+        left: 10px;
+        top: 10px;
+     
+    }
+    .news4440:hover{
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s; 
+        -webkit-transform: scale(1.05);
+        -moz-transform: scale(1.05);
+        transition: scale(1.05);
+        cursor: pointer;
+    }
+}
+@media only screen and (min-width:500px){
+
 .news111{
     width: 1400px;
     height: 700px;
@@ -79,6 +164,6 @@
     -webkit-transform: scale(1.05);
     -moz-transform: scale(1.05);
     transition: scale(1.05);
-    /* box-shadow: -10px 10px 15px #CCC; */
     cursor: pointer;
+}
 }

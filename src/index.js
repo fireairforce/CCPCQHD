@@ -1,4 +1,6 @@
 import dva from 'dva';
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap-theme.css'
 // import './index.css';
 
 // 1. Initialize

@@ -33,9 +33,9 @@ export default {
       'extraBabelPlugins': baseBabelPlugin.concat('dva-hmr'),
     },
     'production': {
-      // 'publicPath': '',
+       'publicPath': 'http://pdx2xd16q.bkt.clouddn.com',
       'extraBabelPlugins': baseBabelPlugin
     }
   },
-  publicPath: 'http://pdx2xd16q.bkt.clouddn.com/wd',
+  // publicPath: 'http://pdx2xd16q.bkt.clouddn.com/wd',
 }

@@ -16,7 +16,7 @@ class AppNews extends Component{
              res => res.json()).then(
              receive => {
              this.setState({mytext:receive},() => {
-                 console.log('mytext', this.state.mytext)
+                // console.log('mytext', this.state.mytext)
              });    
            }
           )
@@ -25,7 +25,7 @@ class AppNews extends Component{
        this.getData();
      }
     render(){
-        console.log(this.state.mytext.data);
+      //  console.log(this.state.mytext.data);
         return(
             <div className={styles.news111}>
                  <div className={styles.news222}>

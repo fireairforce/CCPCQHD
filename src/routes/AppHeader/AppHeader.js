@@ -35,7 +35,7 @@ getData(){
          res => res.json()).then(
          receive => {
          this.setState({mytext:receive},() => {
-             console.log('mytext233', this.state.mytext)
+             //console.log('mytext233', this.state.mytext)
          });      
        }
       )
@@ -53,31 +53,45 @@ getData(){
                       {<Menu>
                         <SubMenu title={this.state.mytext.data?this.state.mytext.data[0].competeType:""}>
                             <Menu.Item>{this.state.mytext.data?this.state.mytext.data[0].details:""}</Menu.Item>
-                            <Menu.Item>{this.state.mytext.data?this.state.mytext.data[0].details:""}</Menu.Item>
+        
                        </SubMenu>
                        <SubMenu title={this.state.mytext.data?this.state.mytext.data[1].competeType:""}>
                             <Menu.Item>{this.state.mytext.data?this.state.mytext.data[1].details:""}</Menu.Item>
-                            <Menu.Item>{this.state.mytext.data?this.state.mytext.data[1].details:""}</Menu.Item>
+            
                        </SubMenu>
                        <Divider />
                        <SubMenu title={this.state.mytext.data?this.state.mytext.data[2].competeType:""}>
                          <Menu.Item>{this.state.mytext.data?this.state.mytext.data[2].details:""}</Menu.Item>
-                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[2].details:""}</Menu.Item>
+                     
                        </SubMenu>
                        <SubMenu title={this.state.mytext.data?this.state.mytext.data[3].competeType:""}>
                          <Menu.Item>{this.state.mytext.data?this.state.mytext.data[3].details:""}</Menu.Item>
-                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[3].details:""}</Menu.Item>
+                        
                        </SubMenu>
                        <SubMenu title={this.state.mytext.data?this.state.mytext.data[4].competeType:""}>
                          <Menu.Item>{this.state.mytext.data?this.state.mytext.data[4].details:""}</Menu.Item>
-                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[4].details:""}</Menu.Item>
+                      
                        </SubMenu>
                        <Divider />
-                       <Menu.Item>{this.state.mytext.data?this.state.mytext.data[5].competeType:"null"}</Menu.Item>
-                       <Menu.Item>{this.state.mytext.data?this.state.mytext.data[6].competeType:"null"}</Menu.Item>
+
+                        <SubMenu title={this.state.mytext.data?this.state.mytext.data[5].competeType:""}>
+                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[5].details:""}</Menu.Item>
+                      
+                       </SubMenu>
+
+                        <SubMenu title={this.state.mytext.data?this.state.mytext.data[6].competeType:""}>
+                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[6].details:""}</Menu.Item>
+                        
+                       </SubMenu>
                        <Divider />
-                       <Menu.Item>{this.state.mytext.data?this.state.mytext.data[7].competeType:"null"}</Menu.Item>
-                       <Menu.Item>{this.state.mytext.data?this.state.mytext.data[8].competeType:"null"}</Menu.Item>
+                       <SubMenu title={this.state.mytext.data?this.state.mytext.data[7].competeType:""}>
+                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[7].details:""}</Menu.Item>
+                       
+                       </SubMenu>
+                       <SubMenu title={this.state.mytext.data?this.state.mytext.data[8].competeType:""}>
+                         <Menu.Item>{this.state.mytext.data?this.state.mytext.data[8].details:""}</Menu.Item>
+                        
+                       </SubMenu>
                      </Menu>}
                       >
                         <img src="http://pdx2xd16q.bkt.clouddn.com/menu.png" alt='f'/>
