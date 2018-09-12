@@ -8,7 +8,7 @@ import { Menu, Dropdown, Input,Divider,Button } from 'antd'
  * */
 const SubMenu = Menu.SubMenu
 const Search = Input.Search
-const history=createHistory();
+// const history=createHistory();
 const MenuItemGroup = Menu.ItemGroup;
 class AppHeader extends Component{
   state = {
@@ -46,7 +46,7 @@ getData(){
         return(
             <div className={styles.AppHeader}>
                 <ul className={styles.nav}>
-                 <li onClick={()=>{history.push('./')}}><img src="http://pdx2xd16q.bkt.clouddn.com/logo.png" alt='logo' className={styles.logo} /></li>
+                 <li onClick={()=>{this.porps.history.push('./')}}><img src="http://pdx2xd16q.bkt.clouddn.com/logo.png" alt='logo' className={styles.logo} /></li>
                     <li>
                       <Dropdown overlay=
                       {<Menu>

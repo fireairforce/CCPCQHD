@@ -1,18 +1,16 @@
 import React,{Component}from 'react'
-import {Button,Input,message,Form} from 'antd'
+import {Button,Input,message,Form,Divider,Popconfirm,Table,Modal} from 'antd'
 import 'antd/dist/antd.css'
 import Rewriten from './EditableCell';
 
 const FormItem=Form.Item
-<<<<<<< HEAD
-=======
+
 const confirm = () => {
   message.success('删除成功');
 }
 const cancel=()=> {
   message.error('取消成功'); 
 }
->>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
 @Form.create()
 class Menu extends Component{
   constructor(props){
@@ -20,10 +18,6 @@ class Menu extends Component{
     this.state={
       visible: false ,
       loading: false,
-<<<<<<< HEAD
-=======
-      allContent:''
->>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
     }
     this.handleSubmit=this.handleSubmit.bind(this)
   }
@@ -79,8 +73,6 @@ class Menu extends Component{
    })
  }
   render(){
-<<<<<<< HEAD
-=======
     const showModal = () => {
       this.setState({
         visible: true,
@@ -124,7 +116,6 @@ class Menu extends Component{
         </span>
       ),
     }];
->>>>>>> ca94ed4894ac28f11a28afbf90a049af383b9f24
     const {getFieldDecorator}=this.props.form
     return(
       <div>
@@ -157,11 +148,9 @@ class Menu extends Component{
            提交
           </Button>
         </div>
-<<<<<<< HEAD
        <div>
          <Rewriten />
        </div>
-=======
         <div>
         <Table columns={columns} dataSource={this.state.allContent} />
         </div>

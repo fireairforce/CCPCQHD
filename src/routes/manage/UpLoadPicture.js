@@ -130,7 +130,7 @@ class UpLoadPicture extends Component {
     return (
       <div>
         <Upload {...uploadProps}>
-          {/* <div>
+           <div>
             <Icon type='plus' />
             <div className='ant-upload-text'>图片上传</div>
           </div>
