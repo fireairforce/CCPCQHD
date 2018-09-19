@@ -5,59 +5,35 @@ import { Router, Route, Switch } from 'dva/router';
 // import IndexPage from './routes/IndexPage';
 
 function RouterConfig({ history,app }) {
-  const App = dynamic({
+  const AppOne = dynamic({
     app,
-    component: () => import('./routes/index')
+    component: () => import('./routes')
   })
-  const Login = dynamic({
-    app,
-    component: () => import('./routes/Login/Login')
+  const Login =dynamic({
+   app,
+   component:() => import ('./routes/Login/Login')
   })
-  const Manage =dynamic({
+  const Manage = dynamic({
     app,
-    component:()=>import('./routes/manage/index')
+    component:()=> import ('./routes/manage')
   })
-  const News =dynamic({
+  const SecondPage=dynamic({
     app,
-    component:()=>import('./routes/NewsSecond/NewsSecond')
+    component:()=> import ('./routes/SecondPage/index')
   })
-  const NewsOne =dynamic({
+  const SecondPageDetail= dynamic({
     app,
-    component:()=>import('./routes/NewsSecondOne/NewsSecondOne')
-  })
-  const NewsTwo =dynamic({
-    app,
-    component:()=>import('./routes/NewsSecondTwo/NewsSecondTwo')
-  })
-  const Focus=dynamic({
-    app,
-    component:()=>import('./routes/FocusSecond/FocusSecond')
-  })
-  const FocusOne =dynamic({
-    app,
-    component:()=>import('./routes/FocusSecond1/FocusSecond1')
-  })
-  const FocusTwo =dynamic({
-    app,
-    component:()=>import('./routes/FocusSecond2/FocusSecond2')
-  })
-  const FocusThree =dynamic({
-    app,
-    component:()=>import('./routes/FocusSecond3/FocusSecond3')
+    component:()=>import ('./routes/SecondPageDetail/index')
   })
   return (
     <Router history={history}>
             <Switch>
-                <Route path="/" exact component={App} />
+                <Route path="/" exact component={AppOne} />
                 <Route path="/login"  component={Login} />
                 <Route path='/manage' component={Manage} />
-                <Route path="/news" component={News} />
-                <Route path="/news1" component={NewsOne} />
-                <Route path="/news2" component={NewsTwo} />
-                <Route path="/focus" component={Focus} />
-                <Route path="/focus1" component={FocusOne} />
-                <Route path="/focus2" component={FocusTwo} />
-                <Route path="/focus3" component={FocusThree} />
+                <Route path='/game' component={SecondPage} />
+                <Route path='/detail/:id/:type' component={SecondPageDetail} />
+               
             </Switch>
         </Router>
   );

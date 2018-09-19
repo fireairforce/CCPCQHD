@@ -1,0 +1,37 @@
+@import './custom.less';
+
+@footer: footer0;
+.@{footer} {
+  top:280px;
+  //background-color: @template-bg-color;
+  text-align: center;
+  height: 80px;
+  width:1400px;
+  //left:253px;
+  margin: 0 auto;
+  // color: @template-footer-text-color;
+  background-color: #013c4e;
+  overflow: hidden;
+  position: relative;
+  span {
+    display: block;
+    margin: 20px auto 0;
+    color:#fff;
+   font-size:20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .@{footer} {
+    top:320px;
+    font-size:12px;
+    text-align:center;
+    width: 400px;
+    //position: relative;
+    //left:0px;
+    > div {
+      //width: 90%;
+      margin: auto;
+    }
+  }
+}

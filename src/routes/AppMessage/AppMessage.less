@@ -1,5 +1,29 @@
+
+@media only screen and (max-width:500px){
+    .AppMessage{
+        width: 400px;
+        height: 220px;
+        background: rgba(0,98,132,1);
+       position: relative;
+    }
+    .list{
+       margin-left: 20px;  
+    }
+    .list li{
+        position: relative;
+        list-style-type: none;
+        float: left;
+        margin: 0 auto;
+       padding: 20px;
+       
+    }
+    .list span{
+      color: #fff;
+    }
+    }
+@media only screen and (min-width:500px){
 .AppMessage{
-    height:176px;
+    height:130px;
     background-color: rgba(0,98,132,1);
     text-align:center;
     border:1px solid rgba(255,255,255,0);
@@ -8,27 +32,26 @@
     position: relative;
 }
 .list{
-    margin-left: 80px;
-    padding-top: 20px;
+    margin-left: 120px;
     text-align: center;
-    // margin-left:120px;
     width:1400px;
+    position: absolute;
+    left: -100px;
 }
 .list li{
     list-style-type: none;
     float: left;
-    margin-left:100px;
+    margin-left:120px;
     padding-top: 25px;
     text-align: center;
     line-height: 30px;
     font-family: "微软雅黑";
 }
-// img{
-//     width: 65px;
-//     height: 65px;
-// }
-.sss{
+
+.list span{
     color: rgba(255,255,255,1);
     font-family: Roboto;
     font-size:18px;
+    
+}
 }

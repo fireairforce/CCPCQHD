@@ -1,0 +1,70 @@
+@import './custom.less';
+
+@content7: content7;
+.@{content7} {
+  &-wrapper {
+    height: 500px;
+    overflow: hidden;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(red), to(blue));
+  }
+  > h1 {
+    text-align: center;
+    position: relative;
+    //top: %;
+    margin: auto;
+  }
+  > ul {
+    position: relative;
+    top: 5%;
+    padding: 10px 0;
+    > li {
+      width: 33.33%;
+      padding: 0 4%;
+      display: inline-block;
+       text-align: center;
+      &.queue-anim-leaving {
+        position: relative;
+      }
+      .icon {
+        width: 150px;
+        height: 150px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+      > h3 {
+        line-height: 32px;
+        margin: auto;
+      }
+      > h2 {
+        line-height: 32px;
+        margin: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .@{content7}-wrapper {
+    height: 760px;
+    .@{content7} {
+      width: 90%;
+      max-width: 100%;
+      > h1{
+        top: auto;
+        margin: 40px auto 20px;
+      }
+      > ul {
+        top: auto;
+        padding: 0;
+        > li{
+          width: 100%;
+          max-width: 250px;
+          display: block;
+          margin: 20px auto 40px;
+          padding: 0;
+        }
+      }
+    }
+  }
+}

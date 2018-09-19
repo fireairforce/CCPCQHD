@@ -1,0 +1,268 @@
+@import './custom.less';
+@test: test;
+.@{test} {
+  width: 1400px;
+  // 如果在第一屏且导航位置为 relative, 一屏为 height: calc(~"100vh - 64px");
+  height: 600px;
+ // position: relative;
+ // border-color: #000;
+  background: #fff;
+  //margin-left: 252px;
+  margin: 0 auto;
+  &-wrapper, .banner-anim {
+    height: 100%;
+  }
+  & .queue-anim-leaving {
+    position: relative !important;
+    //width: auto;
+  }
+  .banner-user-elem {
+    height: 100%;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .bg0 {
+    background: url("http://pdy48vy9a.bkt.clouddn.com/%E6%9D%AD%E7%94%B5.png") center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    background-size: cover;
+    margin: 0 auto;
+  }
+  .bg1{
+    background: url("http://pdx2xd16q.bkt.clouddn.com/netcompete.png") center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    background-size: cover;
+    margin: 0 auto;
+  }
+  .bg2 {
+    background: url("http://pdy48vy9a.bkt.clouddn.com/%E5%8C%97%E5%8D%8E.png") center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    background-size: cover;
+    margin: 0 auto;
+  }
+  .bg3 {
+    background: url("http://pdy48vy9a.bkt.clouddn.com/%E4%B8%9C%E7%A7%A6.png") center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    background-size: cover;
+    margin: 0 auto;
+  }
+  .bg4 {
+    background: url("http://pdy48vy9a.bkt.clouddn.com/%E6%A1%82%E6%9E%97%E7%94%B5%E5%AD%90.png") center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    background-size: cover;
+    margin: 0 auto;
+  }
+  .bg5 {
+    background: url("http://pdy48vy9a.bkt.clouddn.com/%E5%93%88%E5%B7%A5%E5%A4%A7%E6%B7%B1%E5%9C%B3jpg.png") center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    background-size: cover;
+    margin: 0 auto;
+  }
+  .banner-user-elem .banner-user-title {
+    font-size: 38px;
+    top: 40%;
+  }
+  .banner-user-elem .banner-user-text {
+    top: 40%;
+  }
+  &-title {
+    display: block;
+    position: relative;
+    top: 30%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 38px;
+    color: #fff0f6;
+    width: 550px;
+    text-align: center;
+    & .logo {
+      width: 350px;
+      left: 30px;
+      margin: auto;
+      display: inline-block;
+      position: relative;
+    }
+    & .Slide-title{
+      position: relative;
+      top: -30px;
+      left: -240px;
+       width: 1080px;
+       font-size: 1.4em;
+      //  margin-bottom: 5px;
+      }
+    & p {
+      position: relative;
+      top: 40px;
+      word-wrap: break-word;
+      font-size: 1.3em
+    }
+    & button {
+      display: none;
+      border: 1px solid #fff;
+      color: #fff;
+      background: transparent;
+      box-shadow: 0 0 0 transparent;
+      transition: background .45s @ease-out, box-shadow .45s @ease-out;
+      line-height: 36px;
+      font-size: 38px;
+      height: 36px;
+      & span {
+        text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+        transition: text-shadow .45s @ease-out;
+      }
+      &:hover {
+        color: #fff;
+        border-color: #fff;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 10px rgba(50, 250, 255, 0.75);
+        & span {
+          text-shadow: 1px 1px 3px rgba(0, 0, 0, .35);
+        }
+      }
+    }
+  }
+  &-icon {
+    font-size: 24px;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    margin-left: -12px;
+    color: @template-text-color-light;
+  }
+}
+
+.banner-anim-thumb-default span {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .5);
+}
+@media screen and (max-width: 414px) {
+  .@{test}{
+    width: 400px;
+    height: 200px;
+    margin: 0;
+    padding: 0;
+    &-title{
+      width: 400px;
+      height: 200px;
+      & .Slide-title{
+        position: relative;
+        top: 10px;
+        left: 5px;
+        width: 400px;
+        font-size: 20px;
+        //  margin-bottom: 10px;
+        }
+      & p {
+        position: relative;
+        top: 10px;
+        word-wrap: break-word;
+        font-size: 20px;
+      }
+      .logo{
+        width: 90%;
+        left: 0;
+        display: none;
+      }
+    }
+    .bg0 {
+      background: url("http://pdx2xd16q.bkt.clouddn.com/ccpchdu.png") center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      overflow: hidden;
+      background-size: cover;
+    }
+    .bg1{
+      background: url("http://pdx2xd16q.bkt.clouddn.com/netcompete.png") center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      //left: 0;
+      overflow: hidden;
+      background-size: cover;
+    }
+    .bg2 {
+      background: url("http://pdx2xd16q.bkt.clouddn.com/ccpc02.png") center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      margin-left: 20px;
+      top: 0;
+      //left: 0;
+      // color: #FFF43D;
+      // color: #F6B429;
+      // color: #FF4058;
+      // color: #FC1E4F;
+      // color: #9FDA7F;
+      // color: #64D487;
+      overflow: hidden;
+      background-size: cover;
+    }
+    .bg3 {
+      background: url("http://pdx2xd16q.bkt.clouddn.com/ccpc01.png") center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      margin-left: 20px;
+      top: 0;
+      //left: 0;
+      overflow: hidden;
+      background-size: cover;
+    }
+    .bg4 {
+      background: url("http://pdx2xd16q.bkt.clouddn.com/ccpc05.png") center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      margin-left: 20px;
+      top: 0;
+      //left: 0;
+      overflow: hidden;
+      background-size: cover;
+    }
+    .bg5 {
+      background: url("http://pdx2xd16q.bkt.clouddn.com/ccpc06.png") center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      margin-left: 20px;
+      top: 0;
+      //left: 0;
+      overflow: hidden;
+      background-size: cover;
+    }
+    .bg {
+      background-attachment: inherit;
+    }
+  }
+}

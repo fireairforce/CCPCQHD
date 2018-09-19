@@ -1,0 +1,141 @@
+@media only screen and (max-width:500px){
+.AppBottom{
+    width: 400px;
+    height: 100px;
+    background-color: #003b4d;
+    margin: 0 auto;
+}
+.zanzhushang4{
+  width:390px
+}
+}
+@media only screen and (min-width:500px){
+.AppBottom{
+    width: 1400px;
+    height: 220px;
+    background-color: #003b4d;
+    margin: 0 auto;
+}
+}
+
+.zanzhushang2{
+  display: none;
+}
+.zanzhushang2{
+  display: none
+}
+.zanzhushang4{
+  width:1200px;
+  height:350px;
+   /* text-align:center; */
+  position: absolute;
+  top:120px;
+  left:100px;/*  */
+  background-color:#fff
+ 
+}
+.details-switch-demo-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+    transition: background 1s;
+  }
+
+  .details-switch-demo {
+    margin: 40px auto;
+    width: 1200px;
+    height: 370px;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .details-switch-demo-img-wrapper{
+     width: 50%; 
+    display: inline-block;
+    height: 100%;
+    /* position: relative;
+    left:-10% */
+  }
+  .details-switch-demo-text-wrapper {
+    width: 100%;
+    display: inline-block;
+    height: 100%;
+  }
+
+  .details-switch-demo-pic,
+  .details-switch-demo-map {
+    position: absolute;
+  }
+
+  .details-switch-demo-pic {
+    width: 220px;
+    top: 100px;
+    left: 40px;
+  }
+
+  .details-switch-demo-map {
+    width: 250px;
+    top: 60px;
+    left: 30px;
+  }
+  .details-switch-demo-map.map2{
+    width: 200px;
+    left: 50px;
+  }
+
+  .details-switch-demo-text-wrapper .banner-anim-elem {
+    padding: 40px;
+  }
+
+  .details-switch-demo-text-wrapper h1 {
+    font-size: 18px;
+    margin: 5px auto;
+  }
+
+  .details-switch-demo-text-wrapper em {
+    height: 2px;
+    width: 60px;
+    border-radius: 2px;
+    display: block;
+  }
+
+  .details-switch-demo-text-wrapper p {
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: left;
+  }
+
+  .details-switch-demo-wrapper .anticon{
+    position: absolute;
+    font-size: 24px;
+    top: 50%;
+    margin-top: -12px;
+    cursor: pointer;
+  }
+
+  .details-switch-demo-wrapper .anticon-left{
+    left: 5px;
+    z-index: 999;
+  }
+
+  .details-switch-demo-wrapper .anticon-right{
+    right: 5px;
+  }
+  @media screen and (max-width: 414px) {
+    .details-switch-demo {
+      transform: scale(.6) translateX(12px);
+      transform-origin: left center;
+    }
+  }
+  @media screen and (max-width: 375px) {
+    .details-switch-demo {
+      transform: scale(.55) translateX(7px);
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .details-switch-demo {
+      transform: scale(.46) translateX(12px);
+    }
+  }

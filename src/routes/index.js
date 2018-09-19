@@ -1,53 +1,26 @@
-import React,{Component} from "react"
-import AppProcess from './AppProcess/AppProcess'
+import React from 'react'
 import AppNews from './AppNews/AppNews'
 import AppRules from './AppRules/AppRules'
-import Appbottom from './Appbottom/Appbottom'
+import AppBottomNews from './AppBottomNew/AppBottomNew'
 import AppHeader from './AppHeader/AppHeader'
-import AppSLider from './Slider/index'
 import AppMessage from './AppMessage/AppMessage'
-import AppCompete from "./AppCompete/AppCompete"
-import AppClender from "./AppClender/AppClender"
-import styles from "../routes/index.css"
-class App extends Component{
-    // componentDidMount(){
-    //     fetch('http://form.andyhui.xin/evaluation', {
-    //       method: 'PUT',
-    //       headers: {
-    //         'Content-Type': 'application/json'
-    //       },
-    //     }).then((res) => {
-    //       return res.json()
-    
-    //     }).then((json) => {
-    //       console.log('json',json)
-    //       if (json.code === 1000) {
-    //         console.log('json'.json)
-    //         this.props.dispatch({
-    //           type: 'app/allMessage',
-    //           payload: json.data.info
-    //         })
-    //         this.setState({submitted: true})
-    //       }
-    //     }).catch((e) => {
-    //       console.log(e)
-    //     })    
-    //   }
-    render(){
-       return(
-        <div className={styles.Main1}>
-            <AppHeader />
-            <AppSLider />
-            <AppMessage />
-            <AppCompete />
-            <AppRules />
-            <AppProcess />
-            <AppNews />
-            <AppClender />
-            <Appbottom />
-      </div>
-       )
-    }
+import AppCompete from './AppCompeteNew/AppCompete'
+import AppSlide from './AppSlide/AppSlide'
+import Nav from './AppBottom/AppBottom'
+import styles from '../routes/index.css'
+const AppOne = (props) => {
+  return (
+    <div className={styles.Main1}>
+      <AppHeader />
+      <AppSlide />
+      <AppMessage />
+      <AppCompete />
+      <AppRules />
+      <AppNews />
+      <AppBottomNews />
+      <Nav />
+    </div>
+  )
 }
-export default App
+export default AppOne
 

@@ -20,7 +20,7 @@ const baseBabelPlugin = [
  */
 export default {
   'entry': 'src/index.js',
-  'disableCSSModules': true,
+  // 'disableCSSModules': true,
   'hash': true,
   'autoprefixer': {
     'browsers': [

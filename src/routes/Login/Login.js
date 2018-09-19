@@ -69,3 +69,4 @@ class LoginPage extends React.Component {
 
 let Login = Form.create()(LoginPage);
 export default Login;
+

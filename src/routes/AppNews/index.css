@@ -24,14 +24,15 @@
     .news4440{
        float:left;
        padding-left: 40px;
-       padding-top: 180px;
+       padding-top: 160px;
        
     }
     .news44410{
-        width: 100%;
+      width: 100%;
         height: 100px;
         background-color: #01758f;
         position: relative;
+      
     }
     .news44411{
         width: 100%;
@@ -61,14 +62,18 @@
         text-overflow: ellipsis;
         padding: 20px;
     }
+    .news4441 p{
+        font-size: 20px;
+        color: #000;
+       /* padding-bottom: 10px; */
+      }
     .news{
         position: absolute;
         display: block;
-        width: 50%;
         font-size: 20px;
         color:#fff;
-        left: 10px;
-        top: 10px;
+        left: 50px;
+        top: 30px;
      
     }
     .news4440:hover{
@@ -85,7 +90,7 @@
 
 .news111{
     width: 1400px;
-    height: 700px;
+    height: 600px;
     background-color: #DEE0EE;
     position: relative;
     margin: 0 auto;
@@ -94,7 +99,7 @@
     width: 586px;
     height: 100px;
     position: absolute;
-    margin-top: 70px;
+    margin-top: 40px;
     margin-left:400px;
 }
 .news333{
@@ -107,7 +112,7 @@
     height: 400px;
     float:left;
     position: absolute;
-    top:150px;
+    top:100px;
 }
 .news4440{
    float:left;
@@ -118,12 +123,15 @@
     height: 100px;
     background-color: #01758f;
     position: relative;
+    left: 0;
+    text-align: left
 }
 .news44411{
     width: 100%;
     height: 100px;
     background-color: #3b9140;
     position: relative;
+
 }
 
 .news44412{
@@ -131,6 +139,7 @@
     height: 100px;
     background-color: #013c4e;
     position: relative;
+
 }
 .news44413{
     width: 100%;
@@ -140,22 +149,26 @@
 }
 .news4441{
     width: 300px;
-    height: 140px;
+    height: 160px;
     background-color: #fff;
     position: absolute;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding: 20px;
+    padding-top: 40px;
+    text-align: left
+}
+.news4441 p{
+  font-size: 20px;
+  color: #000;
+ /* padding-bottom: 10px; */
 }
 .news{
     position: absolute;
     display: block;
-    width: 50%;
-    font-size: 20px;
+    font-size: 22px;
     color:#fff;
-    left: 10px;
-    top: 10px;
- 
+    left: 20px;
+    top: 30px;
 }
 .news4440:hover{
     transition: 0.5s;

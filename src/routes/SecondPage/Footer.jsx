@@ -1,10 +1,10 @@
 import React from 'react'
 import TweenOne from 'rc-tween-one'
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack'
-import './footer.less'
+
 class Footer extends React.Component {
   static defaultProps = {
-    className: 'footer0'
+    className: 'footer1'
   };
 
   render () {
@@ -19,7 +19,8 @@ class Footer extends React.Component {
         key='footer'
       >
         <span id={`${props.id}-content`}>
-          Copyright © 2015-2018  中国大学生程序设计竞赛组委会
+          Copyright © 2018 The Project by 不洗碗工作室.
+ All Rights Reserved
         </span>
       </TweenOne>
     </OverPack>)
@@ -27,4 +28,3 @@ class Footer extends React.Component {
 }
 
 export default Footer
-
